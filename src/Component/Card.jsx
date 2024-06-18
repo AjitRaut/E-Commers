@@ -11,8 +11,7 @@ const Card = (props) => {
         <div className="my-2">
           <img
             className=" w-full h-60 rounded-xl"
-            src={IMG_URL+cloudinaryImageId
-  }
+            src={IMG_URL + cloudinaryImageId}
           />
         </div>
         <div>
