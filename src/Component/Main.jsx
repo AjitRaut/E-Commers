@@ -7,8 +7,8 @@ const Main = () => {
   
   return (
     <>
-      <div className=" w-full">
-      <div className=" w-3/4 m-auto grid grid-cols-4 gap-7 px-4 bg-slate-300 ">
+      <div className=" w-full bg-slate-50">
+      <div className="max-w-7xl my-24 m-auto grid grid-cols-4 gap-7 px-4 bg-slate-50 ">
         {data.map(datt => (
           <Card key={info.id} datt={datt} />
         ))}

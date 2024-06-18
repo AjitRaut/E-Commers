@@ -8,7 +8,7 @@ const Card = (props) => {
   return (
     <>
       <div className=" max-w-full ">
-        <div className=" my-4">
+        <div className="my-2">
           <img
             className=" w-full h-60 rounded-xl"
             src={IMG_URL+cloudinaryImageId
