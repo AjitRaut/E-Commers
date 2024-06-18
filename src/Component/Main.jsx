@@ -3,7 +3,7 @@ import Card from "./Card";
 import React from "react";
 import data from "../Utils/CardData";
 
-const CardApi = () => {
+const Main = () => {
   
   return (
     <>
@@ -18,4 +18,4 @@ const CardApi = () => {
   );
 };
 
-export default CardApi;
+export default Main;

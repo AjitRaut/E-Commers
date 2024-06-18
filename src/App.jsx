@@ -1,11 +1,11 @@
 import './App.css'
 import './index.css'
 
-import CardApi from './Component/CardApi'
+import Main from './Component/Main'
 function App() {
     return (
     <>    
-    <CardApi />
+    <Main />
     </>
   )
 }
