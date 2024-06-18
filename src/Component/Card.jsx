@@ -14,7 +14,7 @@ const Card = (props) => {
             src={IMG_URL + cloudinaryImageId}
           />
         </div>
-        <div className="w-full bg-orange-900 h-30 overflow-hidden">
+        <div className="w-full ">
           <div>
             <p>{name}</p>
           </div>
