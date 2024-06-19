@@ -35,11 +35,11 @@ const Main = () => {
               <button
                 className=" mx-8 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
                 onClick={() => {
-                  let filterdata = newdata.filter(
-                    (res) => res.info.avgRating > 4
+                  let filterdata =newdata.filter(
+                    (res) => res.info.avgRating < 4
                   );
-                  console.log(filterdata);
-                  setnewdata(filterdata);
+                  
+                  setfiltersearch(filterdata);
                 }}
               >
                 Top Rated
@@ -54,16 +54,15 @@ const Main = () => {
                   setsearch(e.target.value);
                 }}
               />
-              {console.log(search)}
-            </div>
+                         </div>
             <div>
               <button
                 onClick={() => {
-                  let filterdata = newdata.filter((nam) =>
+                  let searchfilter = newdata.filter((nam) =>
                     nam.info.name.includes(search)
                   );
-
-                  setfiltersearch(filterdata);
+                  setfiltersearch(searchfilter);
+                 
                 }}
                 className=" mx-2 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
               >
