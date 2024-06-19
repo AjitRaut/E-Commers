@@ -8,10 +8,10 @@ const Card = (props) => {
   return (
     <>
       <div className=" max-w-full ">
-        <div className="my-2">
+        <div className=" w-full my-2">
           <img
             className=" w-full h-60 rounded-xl"
-            src={IMG_URL + cloudinaryImageId}
+            src={IMG_URL + cloudinaryImageId} alt="card-img"
           />
         </div>
         <div className="w-full">
