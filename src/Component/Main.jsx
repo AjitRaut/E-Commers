@@ -6,6 +6,7 @@ import axios from "axios";
 
 const Main = () => {
   const [newdata, setnewdata] = useState([]);
+  const [filtersearch, setfiltersearch] = useState([]);
   const [search, setsearch] = useState("");
 
   useEffect(() => {
@@ -15,6 +16,10 @@ const Main = () => {
       )
       .then((res) => {
         setnewdata(
+          res?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setfiltersearch(
           res?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
         );
@@ -55,9 +60,12 @@ const Main = () => {
               <button
                 onClick={() => {
                   console.log(setsearch);
-                  
-                  let filterdata=newdata.filter((nam)=>nam.info.name.includes(search));
-                  setnewdata(filterdata)
+
+                  let filterdata = newdata.filter((nam) =>
+                    nam.info.name.includes(search)
+                  );
+
+                  setfiltersearch(filterdata);
                 }}
                 className=" mx-2 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
               >
@@ -67,7 +75,7 @@ const Main = () => {
           </div>
 
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
-            {newdata.map((datt) => (
+            {filtersearch.map((datt) => (
               <Card key={info.id} datt={datt} />
             ))}
           </div>
