@@ -59,8 +59,6 @@ const Main = () => {
             <div>
               <button
                 onClick={() => {
-                  console.log(setsearch);
-
                   let filterdata = newdata.filter((nam) =>
                     nam.info.name.includes(search)
                   );
