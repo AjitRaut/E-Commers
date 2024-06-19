@@ -2,14 +2,29 @@ import { info } from "autoprefixer";
 import Card from "./Card";
 import React from "react";
 import data from "../Utils/CardData";
+import { useState } from "react";
 
 const Main = () => {
+  const [newdata, setnewdata] = useState(data);
   return (
     <>
       <div className=" w-full ">
         <div className="my-24 ">
-          <div className="max-w-7xl  m-auto grid grid-cols-4 gap-7 px-4">
-            {data.map((datt) => (
+          <div className="max-w-6xl m-auto">
+            <button className=" mx-8 bg-fuchsia-500 px-4 py-1 cursor-pointer rounded-lg font-medium text-center text-xl text-cyan-50"
+              onClick={() => {
+                let filterdata = newdata.filter(
+                  (res) => res.info.avgRating < 4
+                );
+                console.log(filterdata);
+                setnewdata(filterdata);
+              }}
+            >
+              Top Rated
+            </button>
+          </div>
+          <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
+            {newdata.map((datt) => (
               <Card key={info.id} datt={datt} />
             ))}
           </div>

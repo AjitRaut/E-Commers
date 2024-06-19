@@ -85,11 +85,12 @@ let data = [
         parentId: "61955",
         avgRatingString: "4.3",
         totalRatingsString: "100+",
+        slaString: "55-60 mins",
         sla: {
           deliveryTime: 56,
           lastMileTravel: 4.2,
           serviceability: "SERVICEABLE",
-          slaString: "55-60 mins",
+
           lastMileTravelString: "4.2 km",
           iconType: "ICON_TYPE_EMPTY",
         },
@@ -144,11 +145,12 @@ let data = [
         parentId: "582",
         avgRatingString: "4.6",
         totalRatingsString: "1K+",
+        slaString: "20-25 mins",
         sla: {
           deliveryTime: 23,
           lastMileTravel: 0.3,
           serviceability: "SERVICEABLE",
-          slaString: "20-25 mins",
+          
           lastMileTravelString: "0.3 km",
           iconType: "ICON_TYPE_EMPTY",
         },
@@ -217,11 +219,12 @@ let data = [
         parentId: "293584",
         avgRatingString: "4.5",
         totalRatingsString: "500+",
+        slaString: "35-40 mins",
         sla: {
           deliveryTime: 36,
           lastMileTravel: 3.7,
           serviceability: "SERVICEABLE",
-          slaString: "35-40 mins",
+          
           lastMileTravelString: "3.7 km",
           iconType: "ICON_TYPE_EMPTY",
         },
