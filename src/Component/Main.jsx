@@ -1,20 +1,34 @@
 import { info } from "autoprefixer";
 import Card from "./Card";
 import React from "react";
-import data from "../Utils/CardData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Main = () => {
-  const [newdata, setnewdata] = useState(data);
+  const [newdata, setnewdata] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.145923&lng=79.08762999999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      )
+      .then((res) => {
+        setnewdata(
+          res?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        );
+      });
+  }, []);
+
   return (
     <>
       <div className=" w-full ">
         <div className="my-24 ">
           <div className="max-w-6xl m-auto">
-            <button className=" mx-8 bg-slate-100  px-3 py-1 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
+            <button
+              className=" mx-8 bg-slate-100  px-3 py-1 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
               onClick={() => {
                 let filterdata = newdata.filter(
-                  (res) => res.info.avgRating < 4
+                  (res) => res.info.avgRating > 4
                 );
                 console.log(filterdata);
                 setnewdata(filterdata);

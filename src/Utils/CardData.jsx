@@ -1209,7 +1209,6 @@ let data = [
         avgRatingString: "4.5",
         totalRatingsString: "10K+",
         slaString: "30-35 mins",
-          slaString: "30-35 mins",
         sla: {
           deliveryTime: 31,
           lastMileTravel: 0.8,
