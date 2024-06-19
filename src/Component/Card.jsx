@@ -23,7 +23,7 @@ const Card = (props) => {
             <span className="font-bold">{avgRating}</span>
             <span className="font-bold">{slaString}</span>
           </div>
-          <div className="w-full h-7 overflow-hidden">
+          <div className="w-full h-7 overflow-hidden font-light text-lg from-stone-400">
             <p>{cuisines.join(", ")}</p>
           </div>
         </div>

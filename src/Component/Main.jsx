@@ -11,7 +11,7 @@ const Main = () => {
       <div className=" w-full ">
         <div className="my-24 ">
           <div className="max-w-6xl m-auto">
-            <button className=" mx-8 bg-fuchsia-500 px-4 py-1 cursor-pointer rounded-lg font-medium text-center text-xl text-cyan-50"
+            <button className=" mx-8 bg-slate-100  px-4 py-1 cursor-pointer rounded-2xl font-medium text-center text-xl text-black"
               onClick={() => {
                 let filterdata = newdata.filter(
                   (res) => res.info.avgRating < 4
