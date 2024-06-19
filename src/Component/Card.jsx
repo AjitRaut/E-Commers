@@ -10,7 +10,7 @@ const Card = (props) => {
       <div className=" max-w-full ">
         <div className=" w-full my-2">
           <img
-            className=" w-full h-60 rounded-xl"
+            className=" w-full h-60 rounded-xl cursor-pointer"
             src={IMG_URL + cloudinaryImageId} alt="card-img"
           />
         </div>
