@@ -3,8 +3,11 @@ import Card from "./Card";
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ShimmerUi from "./ShimmerUi";
 
 const Main = () => {
+
+  
   const [newdata, setnewdata] = useState([]);
   const [filtersearch, setfiltersearch] = useState([]);
   const [search, setsearch] = useState("");
@@ -26,7 +29,10 @@ const Main = () => {
       });
   }, []);
 
-  return (
+   
+  
+  return filtersearch.length===0?(
+    <ShimmerUi />):(
     <>
       <div className=" w-full ">
         <div className="my-24 ">
@@ -69,8 +75,9 @@ const Main = () => {
               </button>
             </div>
           </div>
-
+           
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
+          
             {filtersearch.map((datt) => (
               <Card key={info.id} datt={datt} />
             ))}
