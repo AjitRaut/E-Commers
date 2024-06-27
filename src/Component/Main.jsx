@@ -6,8 +6,6 @@ import axios from "axios";
 import ShimmerUi from "./ShimmerUi";
 
 const Main = () => {
-
-  
   const [newdata, setnewdata] = useState([]);
   const [filtersearch, setfiltersearch] = useState([]);
   const [search, setsearch] = useState("");
@@ -29,10 +27,9 @@ const Main = () => {
       });
   }, []);
 
-   
-  
-  return filtersearch.length===0?(
-    <ShimmerUi />):(
+  return filtersearch.length === 0 ? (
+    <ShimmerUi />
+  ) : (
     <>
       <div className=" w-full ">
         <div className="my-24 ">
@@ -42,7 +39,7 @@ const Main = () => {
                 className=" mx-8 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
                 onClick={() => {
                   let filterdata = newdata.filter(
-                    (res) => res.info.avgRating < 4
+                    (res) => res.info.avgRating > 4
                   );
 
                   setfiltersearch(filterdata);
@@ -75,9 +72,8 @@ const Main = () => {
               </button>
             </div>
           </div>
-           
+
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
-          
             {filtersearch.map((datt) => (
               <Card key={info.id} datt={datt} />
             ))}
