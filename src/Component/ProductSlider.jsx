@@ -7,16 +7,16 @@ import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 const ProductSlider = () => {
   {
     const [newdata, setnewdata] = useState([]);
-    const [Slideritem , SetSlideritem ] = useState(0)
+    const [Slideritem, SetSlideritem] = useState(0);
 
-    const Prev=()=>{
-      if(newdata.length - 8 === Slideritem )return false;
-      SetSlideritem(Slideritem + 3)
-    }
-    const Next=()=>{
-      if(Slideritem === 0 )return false;
-      SetSlideritem(Slideritem - 3)
-    }
+    const Next = () => {
+      if (newdata.length - 8 === Slideritem) return false;
+      SetSlideritem(Slideritem + 3);
+    };
+    const Prev = () => {
+      if (Slideritem === 0) return false;
+      SetSlideritem(Slideritem - 3);
+    };
 
     useEffect(() => {
       axios
@@ -37,13 +37,13 @@ const ProductSlider = () => {
         <div className=" mt-28 w-full h-auto">
           <div className="max-w-6xl m-auto h-full overflow-hidden">
             <div className=" flex justify-between">
-              <div>What in your mind</div>
+              <h2 className=" font-bold">What's in your mind?</h2>
               <div>
                 <button onClick={Prev}>
-                <GoArrowLeft  className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
+                  <GoArrowLeft className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
                 </button>
                 <button onClick={Next}>
-                <GoArrowRight className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
+                  <GoArrowRight className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
                 </button>
               </div>
             </div>
@@ -51,13 +51,12 @@ const ProductSlider = () => {
             <div className=" flex ">
               {newdata.map((datt) => {
                 return (
-                  
-                     <img style={{transform:`translateX(-${Slideritem * 100}%)`}}
+                  <img
+                    style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                     className=" w-36 h-46"
                     key={datt.imageId}
                     src={`${SliderIMG_URL}${datt.imageId}`}
                   />
-                 
                 );
               })}
             </div>
