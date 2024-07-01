@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { SliderIMG_URL } from "../Utils/Url";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const ProductSlider = () => {
   {
@@ -25,19 +26,23 @@ const ProductSlider = () => {
       <>
         <div className=" mt-28 w-full h-auto">
           <div className="max-w-6xl m-auto h-full overflow-hidden">
-          <div className=" flex ">
-            {newdata.map((datt, index) => {
-              return (
-                <img
-                  className=" w-36 h-46"
-                  key={datt.imageId}
-                  src={`${SliderIMG_URL}${datt.imageId}`}
-                />
-              );
-            })}
+            <div>
+              <GoArrowLeft className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline" />
+
+              <GoArrowRight className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline" />
+            </div>
+            <div className=" flex ">
+              {newdata.map((datt, index) => {
+                return (
+                  <img
+                    className=" w-36 h-46"
+                    key={datt.imageId}
+                    src={`${SliderIMG_URL}${datt.imageId}`}
+                  />
+                );
+              })}
+            </div>
           </div>
-          </div>
-         
         </div>
       </>
     );
