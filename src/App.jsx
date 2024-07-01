@@ -3,13 +3,14 @@ import "./index.css";
 
 import Main from "./Component/Main";
 import Header from "./Component/Header";
-import Slider from "./Component/Slider";
+import ProductSlider from "./Component/ProductSlider";
+
 function App() {
   return (
     <>
       <div>
         <Header />
-        <Slider />
+        <ProductSlider />
         <Main />
       </div>
     </>
