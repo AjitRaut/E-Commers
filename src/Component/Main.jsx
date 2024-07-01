@@ -18,9 +18,8 @@ const Main = () => {
         let searchfilter = newdata.filter((nam) =>
           nam.info.name.includes(search)
         );
-      
-          setfiltersearch(searchfilter);
-        
+
+        setfiltersearch(searchfilter);
       } else {
         setfiltersearch(newdata);
       }
@@ -87,16 +86,13 @@ const Main = () => {
           </div>
 
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
-            {/* {filterSearch.length > 0 ? <div></div> : <div></div>} */}
-            {/* {filtersearch.map((datt) => (
-
-              <Card key={info.id} datt={datt} />
-            ))} */}
             {filtersearch.length > 0 ? (
               filtersearch.map((datt) => <Card key={info.id} datt={datt} />)
             ) : (
               <div className="flex justify-center items-center">
-              <h2 className=" text-center font-black  "> There is no match data </h2>
+                <h2 className=" text-center font-black  ">
+                  There is no match data
+                </h2>
               </div>
             )}
           </div>
