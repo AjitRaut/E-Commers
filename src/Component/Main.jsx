@@ -95,7 +95,9 @@ const Main = () => {
             {filtersearch.length > 0 ? (
               filtersearch.map((datt) => <Card key={info.id} datt={datt} />)
             ) : (
+              <div className="flex justify-center items-center">
               <h2 className=" text-center font-black  "> There is no match data </h2>
+              </div>
             )}
           </div>
         </div>
