@@ -25,7 +25,7 @@ const Slider = () => {
       <div className=" my-28">
         <div>
           {newdata.map((datt, index) => {
-            return <img src="{datt.imageId}"></img>;
+            return <img key={datt.imageId} src={`${SliderIMG_URL}${datt.imageId}`}></img>;
           })}
         </div>
       </div>
