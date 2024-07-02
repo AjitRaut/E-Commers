@@ -34,16 +34,16 @@ const ProductSlider = () => {
 
     return (
       <>
-        <div className=" mt-28 w-full h-auto">
-          <div className="max-w-6xl m-auto h-full overflow-hidden">
+        <div className=" mt-24 w-full h-32">
+          <div className="max-w-6xl m-auto overflow-hidden">
             <div className=" flex justify-between">
-              <h2 className=" font-bold">What's in your mind?</h2>
-              <div>
+              <h1 className=" font-serif font-bold text-xl ml-8 ">What's on your mind?</h1>
+              <div className=" mr-6">
                 <button onClick={Prev}>
-                  <GoArrowLeft className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
+                  <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
                 </button>
                 <button onClick={Next}>
-                  <GoArrowRight className=" h-8 w-8 bg-slate-300 rounded-full p-2 inline mr-2" />
+                  <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-6" />
                 </button>
               </div>
             </div>
