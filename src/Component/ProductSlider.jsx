@@ -37,7 +37,9 @@ const ProductSlider = () => {
         <div className=" mt-24 w-full h-32">
           <div className="max-w-6xl m-auto overflow-hidden">
             <div className=" flex justify-between">
-              <h1 className=" font-serif font-bold text-xl ml-8 ">What's on your mind?</h1>
+              <h1 className=" font-serif font-bold text-xl ml-8 ">
+                What's on your mind?
+              </h1>
               <div className=" mr-6">
                 <button onClick={Prev}>
                   <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
