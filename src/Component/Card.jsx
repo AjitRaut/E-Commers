@@ -17,14 +17,14 @@ const Card = (props) => {
   console.log(subHeader);
   return (
     <>
-      <div className=" max-w-full ">
+      <div className=" relative max-w-full ">
         <div className=" w-full my-2">
           <img
             className=" w-full h-60 rounded-xl cursor-pointer"
             src={IMG_URL + cloudinaryImageId}
             alt="card-img"
           />
-          <div className=" font-bold m-7">{subHeader}</div>
+          <span className=" absolute left-5  font-bold">{subHeader}</span>
         </div>
 
         <div className="w-full">
