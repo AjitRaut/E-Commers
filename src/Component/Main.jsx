@@ -33,6 +33,7 @@ const Main = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.145923&lng=79.08762999999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       )
       .then((res) => {
+        console.log(res)
         setnewdata(
           res?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
@@ -85,7 +86,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 px-4">
+          <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 transition-all px-4">
             {filtersearch.length > 0 ? (
               filtersearch.map((datt) => <Card key={info.id} datt={datt} />)
             ) : (

@@ -3,9 +3,17 @@ import "./card.css";
 import { IMG_URL } from "../Utils/Url";
 
 const Card = (props) => {
-  const { cloudinaryImageId, name, avgRating, cuisines, slaString } =
-    props?.datt?.info;
-
+  const {
+    cloudinaryImageId,
+    aggregatedDiscountInfoV3,
+    name,
+    avgRating,
+    cuisines,
+    slaString,
+  } = props?.datt?.info;
+ 
+  const subHeader =  aggregatedDiscountInfoV3?.subHeader;
+  console.log(subHeader);
   return (
     <>
       <div className=" max-w-full ">
@@ -15,7 +23,11 @@ const Card = (props) => {
             src={IMG_URL + cloudinaryImageId}
             alt="card-img"
           />
+           <div className=" font-bold m-7">{ subHeader
+        }</div> 
+         
         </div>
+
         <div className="w-full">
           <div className=" w-full h-8 overflow-hidden font-bold from-neutral-800 text-lg">
             {name}
