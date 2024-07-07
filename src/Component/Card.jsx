@@ -12,14 +12,15 @@ const Card = (props) => {
     sla,
   } = props?.datt?.info;
 
+  const header = aggregatedDiscountInfoV3?.header;
   const subHeader = aggregatedDiscountInfoV3?.subHeader;
   const slaString = sla?.slaString;
-  console.log(subHeader);
+  
   return (
     <>
       <div className=" max-w-full ">
         <div className=" relative w-full my-2">
-        <span className=" absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">ITEMS {subHeader}</span>
+        <span className=" font-sans absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">{header} {subHeader}</span>
           <img
             className=" w-full h-60 rounded-xl cursor-pointer"
             src={IMG_URL + cloudinaryImageId}
