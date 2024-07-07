@@ -9,10 +9,11 @@ const Card = (props) => {
     name,
     avgRating,
     cuisines,
-    slaString,
+    sla,
   } = props?.datt?.info;
- 
-  const subHeader =  aggregatedDiscountInfoV3?.subHeader;
+
+  const subHeader = aggregatedDiscountInfoV3?.subHeader;
+  const slaString = sla?.slaString;
   console.log(subHeader);
   return (
     <>
@@ -23,9 +24,7 @@ const Card = (props) => {
             src={IMG_URL + cloudinaryImageId}
             alt="card-img"
           />
-           <div className=" font-bold m-7">{ subHeader
-        }</div> 
-         
+          <div className=" font-bold m-7">{subHeader}</div>
         </div>
 
         <div className="w-full">
