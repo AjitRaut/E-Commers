@@ -34,8 +34,8 @@ const Card = (props) => {
             {name}
           </div>
           <div className=" flex gap-1 justify-start items-center">
-            <div>
-            <IoMdStarOutline className=" h-5 w-5"/>
+            <div className=" h-5 w-5 bg-green-700 rounded-full">
+            <IoMdStarOutline className=" h-5 w-5 border-none"/>
 
             </div>
             <span className="font-bold">{avgRating}</span>
