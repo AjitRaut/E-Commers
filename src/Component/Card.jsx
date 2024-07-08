@@ -5,15 +5,15 @@ import { IMG_URL } from "../Utils/Url";
 const Card = (props) => {
   const {
     cloudinaryImageId,
-    aggregatedDiscountInfoV3,
+    aggregatedDiscountInfoV3:discount,
     name,
     avgRating,
     cuisines,
     sla,
   } = props?.datt?.info;
 
-  const header = aggregatedDiscountInfoV3?.header;
-  const subHeader = aggregatedDiscountInfoV3?.subHeader;
+  const header = discount?.header;
+  const subHeader =discount?.subHeader;
   const slaString = sla?.slaString;
   
   return (

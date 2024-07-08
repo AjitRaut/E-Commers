@@ -11,7 +11,7 @@ const Main = () => {
   const [search, setsearch] = useState("");
 
   // Serch
-  const Handle_Search = () => {
+  const handle_search = () => {
     if (search) {
       let searchfilter = newdata.filter((nam) =>
         nam.info.name.includes(search)
@@ -24,7 +24,7 @@ const Main = () => {
   };
 
   useEffect(() => {
-    Handle_Search();
+    handle_search();
   }, [search]);
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Main = () => {
             </div>
             <div>
               <button
-                onClick={() => Handle_Search()}
+                onClick={() => handle_search()}
                 className=" mx-2 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
               >
                 Search
