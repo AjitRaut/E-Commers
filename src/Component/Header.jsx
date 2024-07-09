@@ -5,6 +5,7 @@ import { IoMdHelpBuoy } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { SiSwiggy } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -29,16 +30,20 @@ const Header = () => {
                 Offers
               </li>
               <li className=" flex gap-1 items-center">
-                <span>
+              <span>
                   <IoMdHelpBuoy />
                 </span>
-                Help
+               <Link to="/help" >
+                Help</Link>
               </li>
               <li className=" flex gap-1 items-center">
-                <span>
+              <span>
                   <FiUser />
                 </span>
+                <Link to="/Sign in">
                 Sign In
+                </Link>
+              
               </li>
               <li className=" flex gap-1 items-center">
                 <span>
