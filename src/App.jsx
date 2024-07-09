@@ -1,7 +1,6 @@
 import "./App.css";
 import "./index.css";
 import Header from "./Component/Header";
-
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
@@ -14,7 +13,6 @@ function App() {
       <div>
         <Header />
         <Outlet />
-        
       </div>
     </>
   );
@@ -29,7 +27,7 @@ const AppRouter = createBrowserRouter([
         path: "/",
         element: <Body />,
       },
-    
+
       {
         path: "/help",
         element: <Help />,
