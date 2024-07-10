@@ -11,7 +11,8 @@ const Main = () => {
   const [filtersearch, setfiltersearch] = useState([]);
   const [search, setsearch] = useState("");
 
-  // Serch
+  // Search Ietem Component
+  
   const handle_search = () => {
     if (search) {
       let searchfilter = newdata.filter((nam) =>
@@ -88,10 +89,11 @@ const Main = () => {
 
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 transition-all px-4">
             {filtersearch.length > 0 ? (
-              filtersearch.map((datt) =>
-                <Link to={"/restaurants/"+ datt.info.id}>
+              filtersearch.map((datt) => (
+                <Link to={"/restaurants/" + datt.info.id}>
                   <Card key={datt.info.id} datt={datt} />
-                </Link> )
+                </Link>
+              ))
             ) : (
               <div className="flex justify-center items-center">
                 <h2 className=" text-center font-black  ">
