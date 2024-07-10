@@ -1,28 +1,36 @@
-import axios from 'axios'
-import React from 'react'
-import { useState , useEffect } from 'react'
+import axios from "axios";
+import React from "react";
+import { useState, useEffect } from "react";
+import ShimmerUi from "./ShimmerUi";
 
 const ProductsMenu = () => {
+  const [pmenu, setpmenu] = useState([]);
 
-     const [ProductMenu , SetProductMenu] = useState()
+  useEffect(() => {
+    axios
+      .get(
+        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1458004&lng=79.0881546&restaurantId=790839&catalog_qa=undefined&submitAction=ENTER"
+      )
+      .then((res) => {
+        setpmenu(res?.data?.data?.cards[2]?.card?.card?.info);
+      });
+  }, []);
 
-     const ProductMenudata=()=>{
-        axios.get("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=28405&catalog_qa=undefined&submitAction=ENTER")
-       .then((res)=>{
-        console.log("ProductMenu",res)
-       }
-    
-    )
-
-    }
+  console.log(pmenu);
 
   return (
     <>
-     <div>
-        
-        </div> 
+      <h1 className=" mt-32">hii</h1>
+      {pmenu.length === 0 ? (
+        <ShimmerUi />
+      ) : (
+        <div className=" mt-20">
+          <h3>{pmenu.name}</h3>
+          <h3>{pmenu.city}</h3>
+        </div>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default ProductsMenu
+export default ProductsMenu;
