@@ -24,7 +24,6 @@ const ProductSlider = () => {
           "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.145923&lng=79.08762999999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         )
         .then((res) => {
-          console.log(res);
           setnewdata(
             res?.data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
               ?.info

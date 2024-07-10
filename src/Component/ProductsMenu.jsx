@@ -9,7 +9,7 @@ const ProductsMenu = () => {
      const ProductMenudata=()=>{
         axios.get("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=28405&catalog_qa=undefined&submitAction=ENTER")
        .then((res)=>{
-        // console.log(res)
+        console.log("ProductMenu",res)
        }
     
     )

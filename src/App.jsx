@@ -6,6 +6,7 @@ import React from "react";
 import * as ReactDOM from "react-dom/client";
 import Help from "./Component/Help";
 import Body from "./Component/Body";
+import ProductsMenu from "./Component/ProductsMenu";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div>
         <Header />
         <Outlet />
+        
       </div>
     </>
   );
@@ -32,6 +34,10 @@ const AppRouter = createBrowserRouter([
         path: "/help",
         element: <Help />,
       },
+      {
+        path: "/restaurant/:id",
+        element: <ProductsMenu />,
+      }
     ],
   },
 ]);
