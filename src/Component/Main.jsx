@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ShimmerUi from "./ShimmerUi";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [newdata, setnewdata] = useState([]);
@@ -87,7 +88,10 @@ const Main = () => {
 
           <div className="max-w-6xl  m-auto grid grid-cols-4 gap-7 transition-all px-4">
             {filtersearch.length > 0 ? (
-              filtersearch.map((datt) => <Card key={info.id} datt={datt} />)
+              filtersearch.map((datt) =>
+                <Link to={"/restaurants/"+ datt.info.id}>
+                  <Card key={datt.info.id} datt={datt} />
+                </Link> )
             ) : (
               <div className="flex justify-center items-center">
                 <h2 className=" text-center font-black  ">
