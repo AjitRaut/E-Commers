@@ -46,7 +46,7 @@ const ProductsMenu = () => {
                   <span className=" ml-3 text-sm text-slate-400">{areaName
                   }</span>
                 </div>
-                <div className=" lowercase text-sm font-semibold">{slaString}</div>
+                <div className=" lowercase text-sm font-semibold ">{slaString}</div>
               </div>
             </div>
           </div>
