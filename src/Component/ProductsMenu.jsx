@@ -4,16 +4,14 @@ import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
 import { ProductsMenu_URL } from "../Utils/Url";
-const ProductsMenu = () => {
-  const [pmenu, setpmenu] = useState([]);
+import useProductMenu from "../Utils/useProductMenu";
 
+const ProductsMenu = () => {
+  
   const { infoId } = useParams();
 
-  useEffect(() => {
-    axios.get(ProductsMenu_URL + infoId).then((res) => {
-      setpmenu(res?.data?.data?.cards[2]?.card?.card?.info || null);
-    });
-  }, []);
+  const pmenu = useProductMenu(infoId)
+ 
 
   const {
     name,
@@ -25,7 +23,6 @@ const ProductsMenu = () => {
     sla,
   } = pmenu;
 
-  
   const slaString = sla?.slaString;
   return (
     <>

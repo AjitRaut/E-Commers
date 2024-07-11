@@ -13,7 +13,11 @@ function App() {
   const OnOffStatus = useOnOffStatus();
 
   if (OnOffStatus === false)
-    return <h1 className=" mt-20">Please Check Your Intennet Connection !!</h1>;
+    return (
+      <h1 className=" text-xl font-sans font-extrabold">
+        Please Check Your Intennet Connection !!
+      </h1>
+    );
 
   return (
     <>
