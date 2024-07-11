@@ -10,37 +10,38 @@ const ProductsMenu = () => {
   const { infoId } = useParams();
 
   useEffect(() => {
-    axios.get(ProductsMenu_URL + infoId).then((res) =>{
+    axios.get(ProductsMenu_URL + infoId).then((res) => {
       setpmenu(res?.data?.data?.cards[2]?.card?.card?.info || null);
     });
   }, []);
 
-  console.log(pmenu)
+  console.log(pmenu);
 
-  const {name , avgRating ,totalRatingsString
-,    costForTwoMessage} = pmenu;
+  const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines } =
+    pmenu;
   return (
     <>
       {pmenu.length === 0 ? (
         <ShimmerUi />
       ) : (
         <div className="mt-20 w-full">
-           <div className=" max-w-6xl  m-auto">
-            <div className=" mx-32">
+          <div className=" max-w-6xl  m-auto">
+            <div className=" mx-32  font-bold">
               <div className=" mt-40">
-            <h1 className=" font-bold text-2xl">{name}</h1>
+                <h1 className=" font-bold text-2xl">{name}</h1>
               </div>
-             <div className=" flex justify-centerm gap-3 mt-7 p-5 box shadow-lg bg-gray-500">
-              <span>{avgRating
-}</span>
-<span>{(totalRatingsString)
-}</span>
-<span>{costForTwoMessage}</span>
-             </div>
+              <div className=" mt-7 p-5 box shadow-lg bg-gray-500">
+                <span>{avgRating}</span>
+                <span>({totalRatingsString})</span>
+                <span className=" m-2 font-serif text-center text-xl text-slate-400 leading-4">
+                  .
+                </span>
+                <span>{costForTwoMessage}</span>
+                <div>{cuisines.join(" ,")}</div>
+              </div>
             </div>
-          
-           </div>
-            </div>
+          </div>
+        </div>
       )}
     </>
   );
