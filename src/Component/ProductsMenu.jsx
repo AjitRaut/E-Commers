@@ -17,8 +17,11 @@ const ProductsMenu = () => {
 
   console.log(pmenu);
 
-  const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines } =
+  const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines , areaName , sla
+  } =
     pmenu;
+
+    const slaString = sla?.slaString;
   return (
     <>
       {pmenu.length === 0 ? (
@@ -26,11 +29,11 @@ const ProductsMenu = () => {
       ) : (
         <div className="mt-12 w-full">
           <div className=" max-w-3xl m-auto flex place-items-center">
-            <div className=" ml-14 font-bold w-full ">
+            <div className=" ml-14  w-full ">
               <div className="p-3 mt-32">
                 <h1 className=" font-bold text-2xl">{name}</h1>
               </div>
-              <div className=" p-3 bg-white border-solid border-2 border-slate-200 rounded-xl">
+              <div className=" p-3 bg-white border-solid border-2  border-slate-200 rounded-xl">
                 <span>{avgRating}</span>
                 <span>({totalRatingsString})</span>
                 <span className=" m-2 font-serif text-center text-xl text-slate-400 leading-4">
@@ -38,6 +41,12 @@ const ProductsMenu = () => {
                 </span>
                 <span>{costForTwoMessage}</span>
                 <div className=" text-orange-600 font-medium text-sm">{cuisines.join(" ,")}</div>
+                <div>
+                  <span>Outlet</span>
+                  <span className=" ml-3 text-sm text-slate-400">{areaName
+                  }</span>
+                </div>
+                <div className=" lowercase text-sm font-semibold">{slaString}</div>
               </div>
             </div>
           </div>
