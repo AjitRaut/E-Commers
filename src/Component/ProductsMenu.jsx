@@ -15,13 +15,18 @@ const ProductsMenu = () => {
     });
   }, []);
 
-  console.log(pmenu);
+  const {
+    name,
+    avgRating,
+    totalRatingsString,
+    costForTwoMessage,
+    cuisines,
+    areaName,
+    sla,
+  } = pmenu;
 
-  const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines , areaName , sla
-  } =
-    pmenu;
-
-    const slaString = sla?.slaString;
+  
+  const slaString = sla?.slaString;
   return (
     <>
       {pmenu.length === 0 ? (
@@ -40,13 +45,18 @@ const ProductsMenu = () => {
                   .
                 </span>
                 <span>{costForTwoMessage}</span>
-                <div className=" text-orange-600 font-medium text-sm">{cuisines.join(" ,")}</div>
+                <div className=" text-orange-600 font-medium text-sm">
+                  {cuisines.join(" ,")}
+                </div>
                 <div>
                   <span>Outlet</span>
-                  <span className=" ml-3 text-sm text-slate-400">{areaName
-                  }</span>
+                  <span className=" ml-3 text-sm text-slate-400">
+                    {areaName}
+                  </span>
                 </div>
-                <div className=" lowercase text-sm font-semibold ">{slaString}</div>
+                <div className=" lowercase text-sm font-semibold ">
+                  {slaString}
+                </div>
               </div>
             </div>
           </div>
