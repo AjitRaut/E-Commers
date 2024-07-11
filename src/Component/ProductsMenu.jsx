@@ -11,11 +11,14 @@ const ProductsMenu = () => {
 
   useEffect(() => {
     axios.get(ProductsMenu_URL + infoId).then((res) =>{
-      setpmenu(res?.data?.data?.cards[2]?.card?.card?.info);
+      setpmenu(res?.data?.data?.cards[2]?.card?.card?.info || null);
     });
   }, []);
 
   console.log(pmenu)
+
+  const {name , avgRating ,totalRatingsString
+,    costForTwoMessage} = pmenu;
   return (
     <>
       {pmenu.length === 0 ? (
@@ -25,11 +28,14 @@ const ProductsMenu = () => {
            <div className=" max-w-6xl  m-auto">
             <div className=" mx-32">
               <div className=" mt-40">
-            <h1 className=" font-bold text-2xl">{pmenu.name}</h1>
+            <h1 className=" font-bold text-2xl">{name}</h1>
               </div>
-             <div>
-              <p>{pmenu.avgRating
-}</p>
+             <div className=" flex justify-centerm gap-3 mt-7 p-5 box shadow-lg bg-gray-500">
+              <span>{avgRating
+}</span>
+<span>{(totalRatingsString)
+}</span>
+<span>{costForTwoMessage}</span>
              </div>
             </div>
           
