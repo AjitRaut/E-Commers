@@ -7,12 +7,13 @@ import * as ReactDOM from "react-dom/client";
 import Help from "./Component/Help";
 import Body from "./Component/Body";
 import ProductsMenu from "./Component/ProductsMenu";
+import useOnOffStatus from "./Utils/useOnOffStatus";
 
 function App() {
+  const OnOffStatus = useOnOffStatus();
 
-const OnOffStatus = useOnOffStatus();
-
-  if(OnOffStatus === false) return <h1 className=" mt-20">Please Check Your Intennet Connection !!</h1>  
+  if (OnOffStatus === false)
+    return <h1 className=" mt-20">Please Check Your Intennet Connection !!</h1>;
 
   return (
     <>
@@ -41,7 +42,7 @@ const AppRouter = createBrowserRouter([
       {
         path: "/restaurants/:infoId",
         element: <ProductsMenu />,
-      }
+      },
     ],
   },
 ]);
