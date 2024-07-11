@@ -10,11 +10,12 @@ const ProductsMenu = () => {
   const { infoId } = useParams();
 
   useEffect(() => {
-    axios.get(ProductsMenu_URL + infoId).then((res) => {
+    axios.get(ProductsMenu_URL + infoId).then((res) =>{
       setpmenu(res?.data?.data?.cards[2]?.card?.card?.info);
     });
   }, []);
 
+  console.log(pmenu)
   return (
     <>
       {pmenu.length === 0 ? (
@@ -26,7 +27,10 @@ const ProductsMenu = () => {
               <div className=" mt-40">
             <h1 className=" font-bold text-2xl">{pmenu.name}</h1>
               </div>
-
+             <div>
+              <p>{pmenu.avgRating
+}</p>
+             </div>
             </div>
           
            </div>
