@@ -1,13 +1,25 @@
 import React from "react";
 import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import useProductMenu from "../Utils/useProductMenu";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
-
   const pmenu = useProductMenu(infoId);
+
+  const [Slideritem, SetSlideritem] = useState(0);
+
+  const Next = () => {
+    if (newdata.length - 8 === Slideritem) return false;
+    SetSlideritem(Slideritem + 3);
+  };
+  const Prev = () => {
+    if (Slideritem === 0) return false;
+    SetSlideritem(Slideritem - 3);
+  };
 
   const {
     name,
@@ -64,9 +76,17 @@ const ProductsMenu = () => {
                   />
                 </div>
               </div>
-              <div>
-                <div className="p-4"> 
-                  <h1 className="mt-4 font-bold text-xl"> Deals For You</h1>
+              <div className="p-4">
+                <div className="flex justify-between place-items-center" > 
+                  <h1 className="font-bold text-xl"> Deals For You</h1>
+                  <div>
+                  <button onClick={Prev}>
+                  <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
+                </button>
+                <button onClick={Next}>
+                  <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
+                </button>
+                  </div>
                 </div>
               </div>
             </div>

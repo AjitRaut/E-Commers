@@ -12,7 +12,7 @@ const Main = () => {
   const [search, setsearch] = useState("");
 
   // Search Ietem Component
-  
+
   const handle_search = () => {
     if (search) {
       let searchfilter = newdata.filter((nam) =>
