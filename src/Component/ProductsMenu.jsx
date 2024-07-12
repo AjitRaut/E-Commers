@@ -33,9 +33,9 @@ const ProductsMenu = () => {
       ) : (
         <div className="mt-12 w-full">
           <div className=" max-w-3xl m-auto flex place-items-center">
-            <div className=" ml-14  w-full ">
+            <div className=" ml-14 w-full ">
               <div className="p-3 mt-32">
-                <h1 className=" font-bold text-2xl">{name}</h1>
+                <h1 className="font-bold text-2xl">{name}</h1>
               </div>
               <div className=" p-3 bg-white border-solid border-2  border-slate-200 rounded-xl">
                 <span>{avgRating}</span>
@@ -57,9 +57,10 @@ const ProductsMenu = () => {
                   {slaString}
                 </div>
                 <hr className="mt-4" />
-                
-                  <div className="text-sm text-slate-500"  dangerouslySetInnerHTML={{ __html: message }} />
-                
+                <div
+                  className="text-sm text-slate-500 leading-9"
+                  dangerouslySetInnerHTML={{ __html: message }}
+                />
               </div>
             </div>
           </div>
