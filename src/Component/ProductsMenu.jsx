@@ -38,7 +38,7 @@ const ProductsMenu = () => {
               </div>
               <div className="pmenu-content">
                 <div className=" p-3 bg-white border-solid border-2  border-slate-200 rounded-xl">
-                  <span>{avgRating}</span>
+                  <span className=" font-bold">{avgRating}</span>
                   <span>({totalRatingsString})</span>
                   <span className=" m-2 font-serif text-center text-xl text-slate-400 leading-4">
                     .
