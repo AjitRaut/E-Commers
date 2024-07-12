@@ -6,11 +6,9 @@ import { useParams } from "react-router-dom";
 import useProductMenu from "../Utils/useProductMenu";
 
 const ProductsMenu = () => {
-  
   const { infoId } = useParams();
 
-  const pmenu = useProductMenu(infoId)
- 
+  const pmenu = useProductMenu(infoId);
 
   const {
     name,
@@ -20,9 +18,14 @@ const ProductsMenu = () => {
     cuisines,
     areaName,
     sla,
+    feeDetails,
   } = pmenu;
 
+  console.log(pmenu);
+
   const slaString = sla?.slaString;
+  const message = feeDetails?.message;
+
   return (
     <>
       {pmenu.length === 0 ? (
@@ -52,6 +55,9 @@ const ProductsMenu = () => {
                 </div>
                 <div className=" lowercase text-sm font-semibold ">
                   {slaString}
+                </div>
+                <div>
+                  <div dangerouslySetInnerHTML={{ __html: message }} />
                 </div>
               </div>
             </div>
