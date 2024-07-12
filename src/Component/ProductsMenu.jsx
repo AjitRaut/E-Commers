@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
-import { ProductsMenu_URL } from "../Utils/Url";
 import useProductMenu from "../Utils/useProductMenu";
 
 const ProductsMenu = () => {

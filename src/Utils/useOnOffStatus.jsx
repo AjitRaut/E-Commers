@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 const useOnOffStatus = () => {
+  const [onlinestaus, setonlinestaus] = useState(true);
 
-    const [onlinestaus , setonlinestaus] = useState(true);
+  useEffect(() => {
+    window.addEventListener("online", () => {
+      setonlinestaus(true);
+    });
+    window.addEventListener("offline", () => {
+      setonlinestaus(false);
+    });
+  }, []);
 
-    useEffect(()=>{
-        window.addEventListener("online" , ()=>{
-            setonlinestaus(true)
-        } )
-        window.addEventListener("offline" , ()=>{
-            setonlinestaus(false)
-        } )
+  return onlinestaus;
+};
 
-
-    } , [])
-
-  return onlinestaus
-}
-
-export default useOnOffStatus
+export default useOnOffStatus;

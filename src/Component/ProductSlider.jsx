@@ -54,7 +54,7 @@ const ProductSlider = () => {
                 return (
                   <img
                     style={{ transform: `translateX(-${Slideritem * 100}%)` }}
-                    className=" w-36 h-46"
+                    className=" w-36 h-46 cursor-pointer"
                     key={datt.imageId}
                     src={`${SliderIMG_URL}${datt.imageId}`}
                   />
