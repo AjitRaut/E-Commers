@@ -64,6 +64,11 @@ const ProductsMenu = () => {
                   />
                 </div>
               </div>
+              <div>
+                <div className="p-4"> 
+                  <h1 className="mt-4 font-bold text-xl"> Deals For You</h1>
+                </div>
+              </div>
             </div>
           </div>
         </div>
