@@ -56,9 +56,10 @@ const ProductsMenu = () => {
                 <div className=" lowercase text-sm font-semibold ">
                   {slaString}
                 </div>
-                <div>
-                  <div dangerouslySetInnerHTML={{ __html: message }} />
-                </div>
+                <hr className="mt-4" />
+                
+                  <div className="text-sm text-slate-500"  dangerouslySetInnerHTML={{ __html: message }} />
+                
               </div>
             </div>
           </div>
