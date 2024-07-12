@@ -47,9 +47,10 @@ const ProductsMenu = () => {
                   <div className=" text-orange-600 font-medium text-sm">
                     {cuisines.join(" ,")}
                   </div>
-                  <div className="flex">
-                    <span>Outlet</span>
-                    <span className=" ml-3 text-sm text-slate-400">
+                  <div className="flex place-items-center">
+                    <div></div>
+                    <span className=" font-bold"> Outlet</span>
+                    <span className=" ml-3 text-sm text-center text-slate-400">
                       {areaName}
                     </span>
                   </div>
