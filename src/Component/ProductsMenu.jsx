@@ -13,11 +13,11 @@ const ProductsMenu = () => {
   const [Slideritem, SetSlideritem] = useState(0);
 
   const Next = () => {
-    if (newdata.length - 8 === Slideritem) return false;
+    if (pmenu.length - 8 === Slideritem) return false;
     SetSlideritem(Slideritem + 3);
   };
   const Prev = () => {
-    if (Slideritem === 0) return false;
+    if (pmenu === 0) return false;
     SetSlideritem(Slideritem - 3);
   };
 
@@ -86,6 +86,11 @@ const ProductsMenu = () => {
                 <button onClick={Next}>
                   <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
                 </button>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex">
+                  <div></div>
                   </div>
                 </div>
               </div>
