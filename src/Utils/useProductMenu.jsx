@@ -19,7 +19,7 @@ const useProductMenu = (infoId) => {
     });
   }, []);
 
-   console.log(pmenu)
+  //  console.log(pmenu)
   return pmenu;
 };
 
