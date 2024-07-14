@@ -13,11 +13,11 @@ const ProductsMenu = () => {
   const [Slideritem, SetSlideritem] = useState(0);
 
   const Next = () => {
-    if (pmenu.length - 8 === Slideritem) return false;
+    if (offers.length - 8 === Slideritem) return false;
     SetSlideritem(Slideritem + 3);
   };
   const Prev = () => {
-    if (pmenu === 0) return false;
+    if (offers === 0) return false;
     SetSlideritem(Slideritem - 3);
   };
 
@@ -80,6 +80,9 @@ const ProductsMenu = () => {
                   />
                 </div>
               </div>
+
+                          {/* Deals & Offers Section */}
+              
               <div className="p-4">
                 <div className="flex justify-between place-items-center">
                   <h1 className="font-bold text-xl"> Deals For You</h1>
@@ -101,10 +104,14 @@ const ProductsMenu = () => {
                           key={index}
                         >
                           <div className="w-80 flex flex-col">
-                            <div className="text-lg font-bold">{offer.info.header}</div>
+                            <div className="text-lg font-bold">
+                              {offer.info.header}
+                            </div>
 
                             {/* <div>{offer.info.expiryTime}</div> */}
-                            <div className="text-sm font-bold text-slate-500" >{offer.info.couponCode}</div>
+                            <div className="text-sm font-bold text-slate-500">
+                              {offer.info.couponCode}
+                            </div>
                           </div>
                         </div>
                       ))}
