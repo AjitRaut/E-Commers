@@ -5,6 +5,7 @@ import { useState } from "react";
 import useProductMenu from "../Utils/useProductMenu";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
+import Recomended from "./Recomended";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
@@ -13,19 +14,17 @@ const ProductsMenu = () => {
   const [Slideritem, SetSlideritem] = useState(0);
 
   const Next = () => {
-    if (offers.length - 8 === Slideritem) return false;
+    if (offers.length - 1 === Slideritem) return false;
     SetSlideritem(Slideritem + 3);
   };
   const Prev = () => {
     if (offers === 0) return false;
-    SetSlideritem(Slideritem - 3);
+    SetSlideritem(Slideritem - 1);
   };
 
   const menuInfo = pmenu?.cards?.[2]?.card?.card?.info;
   const offers =
     pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
-
-  console.log(offers);
 
   const {
     name,
@@ -48,7 +47,7 @@ const ProductsMenu = () => {
       ) : (
         <div className="mt-12 w-full">
           <div className=" max-w-3xl m-auto flex place-items-center">
-            <div className=" ml-14 w-full ">
+            <div className="w-full ">
               <div className="p-3 mt-20">
                 <h1 className="font-bold text-2xl">{name}</h1>
               </div>
@@ -81,8 +80,8 @@ const ProductsMenu = () => {
                 </div>
               </div>
 
-                          {/* Deals & Offers Section */}
-              
+              {/* Deals & Offers Section */}
+
               <div className="p-4">
                 <div className="flex justify-between place-items-center">
                   <h1 className="font-bold text-xl"> Deals For You</h1>
@@ -96,14 +95,16 @@ const ProductsMenu = () => {
                   </div>
                 </div>
                 <div>
+                  {/* Offers Section */}
                   <div className="flex mt-3 overflow-hidden">
-                    <div className=" flex ">
+                    <div className=" flex gap-4 ">
                       {offers.map((offer, index) => (
                         <div
-                          className=" p-2 border-solid border-2 flex border-slate-200 rounded-xl"
+                          className=" p-2 border-solid border-2 flex border-slate-200 rounded-xl cursor-pointer"
                           key={index}
+                          // style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                         >
-                          <div className="w-80 flex flex-col">
+                          <div className="w-72 flex flex-col">
                             <div className="text-lg font-bold">
                               {offer.info.header}
                             </div>
@@ -117,9 +118,12 @@ const ProductsMenu = () => {
                       ))}
                     </div>
                   </div>
+                  {/* Offers Section end */}
                 </div>
               </div>
+              <Recomended />
             </div>
+           
           </div>
         </div>
       )}
