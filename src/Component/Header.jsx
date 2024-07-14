@@ -13,7 +13,7 @@ const Header = () => {
       <header className=" w-full  bg-slate-50 h-20 fixed top-0">
         <div className=" max-w-screen-xl m-auto h-full px-3 bg-slate-50 box shadow-sm flex justify-between font-serif">
           <div className="flex justify-center items-center">
-            <SiSwiggy />
+            <SiSwiggy className="text-amber-600 w-9 h-12" />
           </div>
           <div className="flex ">
             <ul className=" flex justify-center items-center gap-6 cursor-pointer ">

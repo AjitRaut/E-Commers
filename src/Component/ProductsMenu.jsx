@@ -30,9 +30,8 @@ const ProductsMenu = () => {
     areaName,
     sla,
     feeDetails,
-  } = pmenu;
+  } = pmenu?.cards[2]?.card?.card?.info;
 
-  console.log(pmenu);
 
   const slaString = sla?.slaString;
   const message = feeDetails?.message;
