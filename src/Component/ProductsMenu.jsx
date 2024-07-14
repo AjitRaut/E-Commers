@@ -21,12 +21,11 @@ const ProductsMenu = () => {
     SetSlideritem(Slideritem - 3);
   };
 
-
   const menuInfo = pmenu?.cards?.[2]?.card?.card?.info;
-  const offers = pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
+  const offers =
+    pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
 
-  console.log(offers)
-  
+  console.log(offers);
 
   const {
     name,
@@ -94,13 +93,17 @@ const ProductsMenu = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex">
-                    <div>
-                    {offers.map((offer, index) => (
-                      <div key={index}>
-                        {offer.info.header}
-                      </div>
-                    ))} 
+                  <div className="flex mt-3">
+                    <div className=" flex">
+                      {offers.map((offer, index) => (
+                        <div key={index}>
+                          <div className=" bg-red-600 text-lg font-bold">
+                            {offer.info.header}
+                          </div>
+                          {/* <div>{offer.info.expiryTime}</div> */}
+                          <div>{offer.info.couponCode}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
