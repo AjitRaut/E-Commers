@@ -1,19 +1,14 @@
 import React from "react";
 import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
-// import { useState } from "react";
-// import useProductMenu from "../Utils/useProductMenu";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { ProductsMenu_URL } from "../Utils/Url";
+import { useState } from "react";
+import useProductMenu from "../Utils/useProductMenu";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
-
   const pmenu = useProductMenu(infoId);
-
 
   const [Slideritem, SetSlideritem] = useState(0);
 
@@ -26,7 +21,12 @@ const ProductsMenu = () => {
     SetSlideritem(Slideritem - 3);
   };
 
+
   const menuInfo = pmenu?.cards?.[2]?.card?.card?.info;
+  const offers = pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
+
+  console.log(offers)
+  
 
   const {
     name,
@@ -38,8 +38,6 @@ const ProductsMenu = () => {
     sla,
     feeDetails,
   } = menuInfo || {};
-
-  console.log(pmenu);
 
   const slaString = sla?.slaString;
   const message = feeDetails?.message;
@@ -84,20 +82,26 @@ const ProductsMenu = () => {
                 </div>
               </div>
               <div className="p-4">
-                <div className="flex justify-between place-items-center" > 
+                <div className="flex justify-between place-items-center">
                   <h1 className="font-bold text-xl"> Deals For You</h1>
                   <div>
-                  <button onClick={Prev}>
-                  <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
-                </button>
-                <button onClick={Next}>
-                  <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
-                </button>
+                    <button onClick={Prev}>
+                      <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
+                    </button>
+                    <button onClick={Next}>
+                      <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
+                    </button>
                   </div>
                 </div>
                 <div>
                   <div className="flex">
-                  <div></div>
+                    <div>
+                    {offers.map((offer, index) => (
+                      <div key={index}>
+                        {offer.info.header}
+                      </div>
+                    ))} 
+                    </div>
                   </div>
                 </div>
               </div>

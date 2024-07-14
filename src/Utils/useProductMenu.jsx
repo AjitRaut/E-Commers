@@ -11,8 +11,7 @@ const useProductMenu = (infoId) => {
       setpmenu(res?.data?.data || null);
     });
   }, []);
-
-  //  console.log(pmenu)
+  
   return pmenu;
 };
 
