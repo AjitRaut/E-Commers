@@ -123,7 +123,6 @@ const ProductsMenu = () => {
               </div>
               <Recomended />
             </div>
-           
           </div>
         </div>
       )}
