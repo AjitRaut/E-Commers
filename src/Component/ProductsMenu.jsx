@@ -94,14 +94,18 @@ const ProductsMenu = () => {
                 </div>
                 <div>
                   <div className="flex mt-3">
-                    <div className=" flex">
+                    <div className=" flex overflow-hidden">
                       {offers.map((offer, index) => (
-                        <div key={index}>
-                          <div className=" bg-red-600 text-lg font-bold">
-                            {offer.info.header}
+                        <div
+                          className="text-lg font-bold p-2 border-solid border-2 flex border-slate-200 rounded-xl"
+                          key={index}
+                        >
+                          <div className="w-40 flex flex-col">
+                            <div>{offer.info.header}</div>
+
+                            {/* <div>{offer.info.expiryTime}</div> */}
+                            <div>{offer.info.couponCode}</div>
                           </div>
-                          {/* <div>{offer.info.expiryTime}</div> */}
-                          <div>{offer.info.couponCode}</div>
                         </div>
                       ))}
                     </div>
