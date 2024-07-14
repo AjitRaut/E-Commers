@@ -11,15 +11,9 @@ import "./card.css";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
-  const [pmenu, setpmenu] = useState([]);
 
-  useEffect(() => {
-    axios.get(ProductsMenu_URL + infoId).then((res) => {
-      setpmenu(res?.data?.data || null);
-    });
-  }, []);
+  const pmenu = useProductMenu(infoId);
 
-  // const pmenu = useProductMenu(infoId);
 
   const [Slideritem, SetSlideritem] = useState(0);
 
