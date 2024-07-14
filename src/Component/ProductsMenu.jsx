@@ -1,14 +1,25 @@
 import React from "react";
 import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import useProductMenu from "../Utils/useProductMenu";
+// import { useState } from "react";
+// import useProductMenu from "../Utils/useProductMenu";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { ProductsMenu_URL } from "../Utils/Url";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
-  const pmenu = useProductMenu(infoId);
+  const [pmenu, setpmenu] = useState([]);
+
+  useEffect(() => {
+    axios.get(ProductsMenu_URL + infoId).then((res) => {
+      setpmenu(res?.data?.data || null);
+    });
+  }, []);
+
+  // const pmenu = useProductMenu(infoId);
 
   const [Slideritem, SetSlideritem] = useState(0);
 
@@ -21,6 +32,8 @@ const ProductsMenu = () => {
     SetSlideritem(Slideritem - 3);
   };
 
+  const menuInfo = pmenu?.cards?.[2]?.card?.card?.info;
+
   const {
     name,
     avgRating,
@@ -30,8 +43,9 @@ const ProductsMenu = () => {
     areaName,
     sla,
     feeDetails,
-  } = pmenu?.cards[2]?.card?.card?.info;
+  } = menuInfo || {};
 
+  console.log(pmenu);
 
   const slaString = sla?.slaString;
   const message = feeDetails?.message;
