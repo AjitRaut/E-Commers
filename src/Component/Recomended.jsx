@@ -10,9 +10,10 @@ const Recomended = () => {
   const pmenu = useProductMenu(infoId);
 
   const recommended =
-    pmenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+    pmenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards;
-  console.log(recommended);
+      console.log( pmenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+        ?.itemCards)
 
   return (
     <>
@@ -22,15 +23,14 @@ const Recomended = () => {
         <div>
           <div className="px-3">
             <h1 className="font-extrabold text-base">
-              Recomended({recommended.length})
+              Recomended({recommended?.length || 0})
             </h1>
           </div>
           <div>
-            {recommended.map((recom, index) => (
-              <div className=" flex justify-between p-3">
-                <div key={index}>
+            {recommended?.map((recom, index) => (
+              <div className="flex justify-between p-3" key={index}>
+                <div>
                   <div className="font-bold text-lg text-slate-700">
-                    {" "}
                     {recom.card.info.name}
                   </div>
                   <div className="font-bold text-base">
@@ -39,14 +39,6 @@ const Recomended = () => {
                       recom.card.info.finalPrice / 100 ||
                       recom.card.info.price / 100}
                   </div>
-                  {/* <span>{recom.card.info.ratings.aggregatedRating.rating}</span>
-                <span>
-                  (
-                  {recom.card.info.ratings.aggregatedRating.ratingCountV2 && (
-                    <span></span>
-                  )}
-                  )
-                </span> */}
                   <div className="font-extralight text-base text-slate-600">
                     {recom.card.info.description}
                   </div>

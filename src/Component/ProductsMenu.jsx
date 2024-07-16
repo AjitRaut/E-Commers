@@ -6,6 +6,7 @@ import useProductMenu from "../Utils/useProductMenu";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
 import Recomended from "./Recomended";
+import ProductCategories from "./ProductCategories";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
@@ -121,7 +122,8 @@ const ProductsMenu = () => {
                   {/* Offers Section end */}
                 </div>
               </div>
-              <Recomended />
+              {/* <Recomended /> */}
+              <ProductCategories />
             </div>
           </div>
         </div>
