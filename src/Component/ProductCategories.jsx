@@ -23,10 +23,10 @@ const ProductCategories = () => {
     <>
       <div>
         {cat?.map((ca) => (
-          <div key={ca.card.card.title} className=" my-3 bg-slate-500">
-            <div className="text-lg font-bold px-4 py-2 flex justify-between place-items-center border-solid border-2  border-slate-200 bg-white">
+          <div key={ca.card.card.title} className=" my-3">
+            <div className="text-lg font-bold flex justify-between place-items-center border-t-[16px] bg-white">
               <div>
-              {ca.card.card.title}({ca?.card?.card?.itemCards?.length})
+                {ca.card.card.title}({ca?.card?.card?.itemCards?.length})
               </div>
               <div>
                 <MdKeyboardArrowDown className="h-6 w-6" />
