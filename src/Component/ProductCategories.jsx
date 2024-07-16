@@ -23,8 +23,8 @@ const ProductCategories = () => {
     <>
       <div>
         {cat?.map((ca) => (
-          <div key={ca.card.card.title} className=" my-3">
-            <div className="text-lg font-bold flex justify-between place-items-center border-t-[16px] bg-white">
+          <div key={ca.card.card.title}>
+            <div className="text-lg font-bold flex justify-between place-items-center border-t-[12px] bg-white">
               <div>
                 {ca.card.card.title}({ca?.card?.card?.itemCards?.length})
               </div>
