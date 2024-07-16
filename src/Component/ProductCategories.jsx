@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import useProductMenu from "../Utils/useProductMenu";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const ProductCategories = () => {
   const { infoId } = useParams();
@@ -20,11 +21,14 @@ const ProductCategories = () => {
 
   return (
     <>
-      <div>
+      <div className="bg-slate-400 h-4">
         {cat?.map((ca) => (
-          <div key={ca.card.card.title}>
-            <div className="text-base font-bold">
-              {ca.card.card.title}({ca.card.card.itemCards.length})
+          <div key={ca.card.card.title} className=" my-3 bg-slate-500">
+            <div className="text-base font-bold px-2 flex justify-between place-items-center bg-white">
+              {ca.card.card.title}({ca?.card?.card?.itemCards?.length})
+              <div>
+                <MdKeyboardArrowDown className="h-6 w-6" />
+              </div>
             </div>
           </div>
         ))}
