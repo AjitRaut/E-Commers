@@ -6,6 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductItemsCrad from "./ProductItemsCrad";
 
 const ProductCategories = ({categories}) => {
+    console.log(categories)
   const { infoId } = useParams();
   const pmenu = useProductMenu(infoId);
   //   console.log(pmenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
