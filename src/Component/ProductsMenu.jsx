@@ -41,6 +41,16 @@ const ProductsMenu = () => {
   const slaString = sla?.slaString;
   const message = feeDetails?.message;
 
+  const cat =
+    pmenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory" ||
+        c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log(cat);
+
   return (
     <>
       {pmenu.length === 0 ? (
@@ -123,7 +133,9 @@ const ProductsMenu = () => {
                 </div>
               </div>
               {/* <Recomended /> */}
-              <ProductCategories />
+              {cat.map((c,index)=>
+              <ProductCategories key={index} categories={c.card.card}/>
+              )}
             </div>
           </div>
         </div>
