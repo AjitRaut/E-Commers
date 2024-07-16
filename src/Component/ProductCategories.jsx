@@ -4,6 +4,7 @@ import { useState } from "react";
 import useProductMenu from "../Utils/useProductMenu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductItemsCrad from "./ProductItemsCrad";
+import ProductNestedCategories from "./ProductNestedCategories";
 
 const ProductCategories = ({categories}) => {
     console.log(categories)
@@ -35,7 +36,8 @@ const ProductCategories = ({categories}) => {
                 <MdKeyboardArrowDown className="h-6 w-6" />
               </div>
             </div>
-            <ProductItemsCrad itemCards={categories.itemCards} />
+            <ProductItemsCrad itemCards={categories.itemCards} nestedCategories={categories.categories}  />
+            <ProductNestedCategories nestedCategories={categories.categories} />
           </div>
       
       </div>

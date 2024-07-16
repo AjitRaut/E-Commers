@@ -1,8 +1,9 @@
 import React from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
 
-const ProductItemsCrad = ({ itemCards }) => {
+const ProductItemsCrad = ({ itemCards ,nestedCategories}) => {
   console.log(itemCards);
+  console.log(nestedCategories)
 
   if (!itemCards) {
     return null;
