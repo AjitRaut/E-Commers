@@ -12,7 +12,7 @@ const ProductNestedCategories = ({nestedCategories}) => {
       <div>
         {nestedCategories.map((category, index) => (
           <div key={index}>
-            {category?.title}
+            {category?.title}({nestedCategories.length})
           </div>
         ))}
       </div>
