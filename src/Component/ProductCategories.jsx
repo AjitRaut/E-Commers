@@ -1,18 +1,15 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useState } from "react";
-import useProductMenu from "../Utils/useProductMenu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductItemsCrad from "./ProductItemsCrad";
 import ProductNestedCategories from "./ProductNestedCategories";
 
 const ProductCategories = ({ categories }) => {
   console.log(categories);
-  const { infoId } = useParams();
-  const pmenu = useProductMenu(infoId);
+  
 
   const [show, setshow] = useState(false);
-  
+
   const handleshow = () => {
     setshow(!show);
   };
