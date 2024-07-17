@@ -35,6 +35,9 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                   src={Recomended_IMG_URL + item.card.info.imageId}
                   alt=""
                 />
+                <div className="relative">
+                  <button className="bg-white h-8 w-24 border-2 border-gray-400">ADD</button>
+                </div>
               </div>
             </div>
             <hr className="mb-3 border-t-2 border-gray-300" />
