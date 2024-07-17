@@ -1,26 +1,32 @@
-import React from 'react'
-import ProductNestedCatItems from './ProductNestedCatItems';
+import React, { useState } from "react";
+import ProductNestedCatItems from "./ProductNestedCatItems";
 
-const ProductNestedCategories = ({nestedCategories}) => {
-    console.log(nestedCategories)
-    if (!nestedCategories) {
-        return null;
-      }
-    
+const ProductNestedCategories = ({ nestedCategories }) => {
+const [show , setshow] = useState(false)
+
+const handleclick =()=>{
+  setshow(!show)
+}
+
+  console.log(nestedCategories);
+  if (!nestedCategories) {
+    return null;
+  }
+
   return (
     <>
       <div>
         {nestedCategories.map((category, index) => (
-          <div key={index}>
+          <div className="cursor-pointer" key={index} onClick={handleclick}>
             {category?.title}({category?.itemCards?.length})
-            {category?.itemCards?.map((itemcard,index)=>(
-            <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
+            {show && category?.itemCards?.map((itemcard, index) => (
+              <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
             ))}
           </div>
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProductNestedCategories
+export default ProductNestedCategories;
