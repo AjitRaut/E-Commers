@@ -25,7 +25,7 @@ const ProductCategories = ({ categories }) => {
               {categories.title}
               {categories.itemCards && ` (${categories.itemCards.length})`}
             </div>
-            <div>
+            <div className={`transition-transform duration-300 ${show ? "rotate-180" : ""}`}>
               <MdKeyboardArrowDown className="h-6 w-6" />
             </div>
           </div>
