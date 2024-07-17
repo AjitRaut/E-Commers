@@ -18,8 +18,11 @@ const ProductNestedCategories = ({ nestedCategories }) => {
     <>
       <div className="">
         {nestedCategories.map((category, index) => (
-          <div key={index} >
-            <div className="cursor-pointer flex justify-between place-items-center " onClick={handleclick}>
+          <div key={index}>
+            <div
+              className="cursor-pointer flex justify-between place-items-center "
+              onClick={handleclick}
+            >
               <div className="text-lg font-bold p-[10px]">
                 {category?.title}
                 {category.itemCards && ` (${category.itemCards.length})`}

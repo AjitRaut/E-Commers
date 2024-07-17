@@ -3,7 +3,7 @@ import { Recomended_IMG_URL } from "../Utils/Url";
 
 const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
   console.log(itemCards);
-  console.log(nestedCategories);
+  // console.log(nestedCategories);
 
   if (!itemCards) {
     return null;
@@ -22,6 +22,21 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                 <div className="font-bold text-lg text-slate-700">
                   {item.card.info.name}
                 </div>
+                {item.card.info.ratings?.aggregatedRating?.rating && (
+                  <div>
+                    {item.card.info.ratings.aggregatedRating.rating}
+                    {item.card.info.ratings.aggregatedRating.ratingCountV2 && (
+                      <span>
+                        (
+                        {
+                          item.card.info.ratings.aggregatedRating
+                            .ratingCountV2
+                        }
+                        )
+                      </span>
+                    )}
+                  </div>
+                )}
                 <div className="font-bold text-base">
                   <span>&#8377;</span>
                   {item.card.info.defaultPrice / 100 ||
