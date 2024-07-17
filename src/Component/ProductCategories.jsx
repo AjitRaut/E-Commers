@@ -6,7 +6,6 @@ import ProductNestedCategories from "./ProductNestedCategories";
 
 const ProductCategories = ({ categories }) => {
   console.log(categories);
-  
 
   const [show, setshow] = useState(false);
 

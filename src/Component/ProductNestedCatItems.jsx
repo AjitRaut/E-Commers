@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const ProductNestedCatItems = () => {
+const ProductNestedCatItems = ({pti}) => {
+    console.log(pti.name)
   return (
     <>
-     <div>
-        </div> 
+      <div>{pti.name}</div>
     </>
-  )
-}
+  );
+};
 
-export default ProductNestedCatItems
+export default ProductNestedCatItems;

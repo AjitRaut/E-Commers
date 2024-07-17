@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductNestedCatItems from './ProductNestedCatItems';
 
 const ProductNestedCategories = ({nestedCategories}) => {
     console.log(nestedCategories)
@@ -8,14 +9,13 @@ const ProductNestedCategories = ({nestedCategories}) => {
     
   return (
     <>
-     <h2>Nested Categories</h2>
       <div>
         {nestedCategories.map((category, index) => (
           <div key={index}>
             {category?.title}({category?.itemCards?.length})
-            <span>{category?.itemCards?.map((itemcard,index)=>(
-              <div>{itemcard?.card?.info?.name}</div>
-            ))}</span>
+            {category?.itemCards?.map((itemcard,index)=>(
+            <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
+            ))}
           </div>
         ))}
       </div>
