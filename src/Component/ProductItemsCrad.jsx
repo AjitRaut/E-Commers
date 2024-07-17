@@ -25,12 +25,21 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                 
                 <div className="font-bold text-base">
                   <span>&#8377;</span>
-                  {item.card.info.defaultPrice / 100 ||
-                    item.card.info.finalPrice / 100 ||
-                    item.card.info.price / 100}
+                  {item.card.info.finalPrice / 100 ? (
+                    <>
+                      <span className="line-through">
+                        {item.card.info.price / 100}
+                      </span>
+                      &nbsp;
+                      {item.card.info.finalPrice / 100}
+                    </>
+                  ) : (
+                    item.card.info.price / 100
+                  )}
                 </div>
+                
                 {item.card.info.ratings?.aggregatedRating?.rating && (
-                  <div className="py-2">
+                  <div className="py-1">
                     {item.card.info.ratings.aggregatedRating.rating}
                     {item.card.info.ratings.aggregatedRating.ratingCountV2 && (
                       <span>
@@ -40,7 +49,7 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                     )}
                   </div>
                 )}
-                <div className="font-extralight text-base text-slate-600">
+                <div className="font-normal text-base text-slate-600">
                   {item.card.info.description}
                 </div>
               </div>
