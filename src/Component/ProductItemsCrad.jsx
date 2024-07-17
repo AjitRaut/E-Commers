@@ -13,9 +13,9 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
     <>
       <div>
         {itemCards.map((item) => (
-          <div>
+          <div className="w-full">
             <div className="flex justify-between p-3" key={item.card.info.id}>
-              <div>
+              <div className="w-3/4">
                 <div className="font-bold text-lg text-slate-700">
                   {item.card.info.name}
                 </div>
@@ -29,9 +29,9 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                   {item.card.info.description}
                 </div>
               </div>
-              <div className="ml-5 w-3/12">
+              <div className="ml-8 w-3/12">
                 <img
-                  className="h-36 w-40 rounded-lg object-cover"
+                  className="h-36 w-full rounded-lg object-cover"
                   src={Recomended_IMG_URL + item.card.info.imageId}
                   alt=""
                 />
