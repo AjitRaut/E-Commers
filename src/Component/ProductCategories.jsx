@@ -5,8 +5,6 @@ import ProductItemsCrad from "./ProductItemsCrad";
 import ProductNestedCategories from "./ProductNestedCategories";
 
 const ProductCategories = ({ categories }) => {
-  console.log(categories);
-
   const [show, setshow] = useState(false);
 
   const handleshow = () => {
@@ -25,8 +23,14 @@ const ProductCategories = ({ categories }) => {
               {categories.title}
               {categories.itemCards && ` (${categories.itemCards.length})`}
             </div>
-            <div className={`transition-transform duration-300 ${show ? "rotate-180" : ""}`}>
+            <div
+              className={`transition-transform duration-300 ${
+                show ? "rotate-180" : ""
+              }`}
+            >
+              {categories.itemCards && categories.itemCards.length > 0 && (
               <MdKeyboardArrowDown className="h-6 w-6" />
+              )}
             </div>
           </div>
           {show && (
@@ -35,9 +39,9 @@ const ProductCategories = ({ categories }) => {
               nestedCategories={categories.categories}
             />
           )}
-          {show && (
+        
             <ProductNestedCategories nestedCategories={categories.categories} />
-          )}
+          
         </div>
       </div>
     </>
