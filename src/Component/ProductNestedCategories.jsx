@@ -18,34 +18,29 @@ const ProductNestedCategories = ({ nestedCategories }) => {
     <>
       <div className="">
         {nestedCategories.map((category, index) => (
-          <div
-            key={index}
-            onClick={handleclick}
-          >
-            <div className="cursor-pointer flex justify-between place-items-center ">
-            <div className="text-lg font-bold p-[10px]">
-              {category?.title}
-              {category.itemCards && ` (${category.itemCards.length})`}
+          <div key={index} >
+            <div className="cursor-pointer flex justify-between place-items-center " onClick={handleclick}>
+              <div className="text-lg font-bold p-[10px]">
+                {category?.title}
+                {category.itemCards && ` (${category.itemCards.length})`}
+              </div>
+              <div
+                className={`transition-transform duration-300 ${
+                  show ? "rotate-180" : ""
+                }`}
+              >
+                {category.itemCards && category.itemCards.length > 0 && (
+                  <MdKeyboardArrowDown className="h-6 w-6" />
+                )}
+              </div>
             </div>
-            <div
-              className={`transition-transform duration-300 ${
-                show ? "rotate-180" : ""
-              }`}
-            >
-              {category.itemCards && category.itemCards.length > 0 && (
-              <MdKeyboardArrowDown className="h-6 w-6" />
-              )}
-            </div>
-            </div>
-           
+
             {show &&
               category?.itemCards?.map((itemcard, index) => (
                 <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
               ))}
           </div>
-          
         ))}
-        
       </div>
     </>
   );
