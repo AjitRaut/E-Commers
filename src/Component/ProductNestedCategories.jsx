@@ -3,7 +3,6 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductNestedCatItems from "./ProductNestedCatItems";
 
 const ProductNestedCategories = ({ nestedCategories }) => {
-
   const [show, setShow] = useState(null);
 
   const handleclick = (index) => {
@@ -26,7 +25,7 @@ const ProductNestedCategories = ({ nestedCategories }) => {
           <div key={index}>
             <div
               className="cursor-pointer flex justify-between place-items-center "
-              onClick={()=>handleclick(index)}
+              onClick={() => handleclick(index)}
             >
               <div className="text-lg font-bold p-[10px]">
                 {category?.title}

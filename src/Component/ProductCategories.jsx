@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductItemsCrad from "./ProductItemsCrad";
 import ProductNestedCategories from "./ProductNestedCategories";

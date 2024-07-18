@@ -6,8 +6,10 @@ import { FiUser } from "react-icons/fi";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { SiSwiggy } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <>
       <header className=" w-full  bg-slate-50 h-20 fixed top-0">
@@ -30,26 +32,22 @@ const Header = () => {
                 Offers
               </li>
               <li className=" flex gap-1 items-center">
-              <span>
+                <span>
                   <IoMdHelpBuoy />
                 </span>
-               <Link to="/help" >
-                Help</Link>
+                <Link to="/help">Help</Link>
               </li>
               <li className=" flex gap-1 items-center">
-              <span>
+                <span>
                   <FiUser />
                 </span>
-                <Link to="/Sign in">
-                Sign In
-                </Link>
-              
+                <Link to="/Sign in">Sign In</Link>
               </li>
               <li className=" flex gap-1 items-center">
                 <span>
                   <PiShoppingCartFill />
                 </span>
-                Cart
+                <Link to="/cart">Cart({cartItems.length})</Link>
               </li>
             </ul>
           </div>

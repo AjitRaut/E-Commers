@@ -2,7 +2,6 @@ import React from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
 
 const ProductNestedCatptis = ({ pti }) => {
-
   return (
     <>
       <div className="w-full">
@@ -16,16 +15,15 @@ const ProductNestedCatptis = ({ pti }) => {
                 pti.price / 100}
             </div>
             {pti.ratings?.aggregatedRating?.rating && (
-                  <div className="py-1 text-sm text-green-900 font-bold">
-                    {pti.ratings.aggregatedRating.rating}
-                    {pti.ratings.aggregatedRating.ratingCountV2 && (
-                      <span className="text-sm text-gray-600 font-bold">
-                        ({pti.ratings.aggregatedRating.ratingCountV2}
-                        )
-                      </span>
-                    )}
-                  </div>
+              <div className="py-1 text-sm text-green-900 font-bold">
+                {pti.ratings.aggregatedRating.rating}
+                {pti.ratings.aggregatedRating.ratingCountV2 && (
+                  <span className="text-sm text-gray-600 font-bold">
+                    ({pti.ratings.aggregatedRating.ratingCountV2})
+                  </span>
                 )}
+              </div>
+            )}
             <div className="font-normal text-base text-slate-600">
               {pti.description}
             </div>

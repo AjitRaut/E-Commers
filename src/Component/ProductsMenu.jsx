@@ -80,9 +80,8 @@ const ProductsMenu = () => {
               </div>
 
               {/* Deals & Offers Section */}
-               <Offers />
-             {/* Deals & Offers Section */}
-              
+              <Offers />
+              {/* Deals & Offers Section */}
 
               {cat.map((c, index) => (
                 <ProductCategories

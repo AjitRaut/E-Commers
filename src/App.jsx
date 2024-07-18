@@ -8,6 +8,9 @@ import Help from "./Component/Help";
 import Body from "./Component/Body";
 import ProductsMenu from "./Component/ProductsMenu";
 import useOnOffStatus from "./Utils/useOnOffStatus";
+import { Provider } from "react-redux";
+import productstore from "./Utils/ProductStore";
+import Cart from "./Component/Cart";
 
 function App() {
   const OnOffStatus = useOnOffStatus();
@@ -21,10 +24,13 @@ function App() {
 
   return (
     <>
-      <div>
+    <Provider store={productstore}>
+    <div>
         <Header />
         <Outlet />
       </div>
+    </Provider>
+      
     </>
   );
 }
@@ -47,6 +53,10 @@ const AppRouter = createBrowserRouter([
         path: "/restaurants/:infoId",
         element: <ProductsMenu />,
       },
+      {
+        path : "/cart",
+        element : <Cart />
+      }
     ],
   },
 ]);
