@@ -6,7 +6,7 @@ import ProductNestedCategories from "./ProductNestedCategories";
 
 const ProductCategories = ({ categories, show, setshow }) => {
   const handleshow = () => {
-    setshow(!show);
+    setshow();
   };
 
   return (
