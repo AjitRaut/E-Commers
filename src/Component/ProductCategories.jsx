@@ -14,7 +14,11 @@ const ProductCategories = ({ categories, show, setshow }) => {
       <div>
         <div key={categories.title}>
           <div
-            className="flex justify-between place-items-center border-t-[12px] bg-white cursor-pointer"
+            className={`flex justify-between place-items-center border-t-[12px] bg-white ${
+              categories.itemCards && categories.itemCards.length > 0
+                ? "cursor-pointer"
+                : ""
+            }`}
             onClick={handleshow}
           >
             <div className="text-lg font-bold p-[10px]">
