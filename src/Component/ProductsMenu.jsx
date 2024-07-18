@@ -3,31 +3,17 @@ import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import useProductMenu from "../Utils/useProductMenu";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./card.css";
-import Recomended from "./Recomended";
 import ProductCategories from "./ProductCategories";
+import Offers from "./Offers";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
   const pmenu = useProductMenu(infoId);
 
-  const [Slideritem, SetSlideritem] = useState(0);
-
   const [show, setshow] = useState(false);
 
-  const Next = () => {
-    if (offers.length - 1 === Slideritem) return false;
-    SetSlideritem(Slideritem + 3);
-  };
-  const Prev = () => {
-    if (offers === 0) return false;
-    SetSlideritem(Slideritem - 1);
-  };
-
   const menuInfo = pmenu?.cards?.[2]?.card?.card?.info;
-  const offers =
-    pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
 
   const {
     name,
@@ -94,47 +80,10 @@ const ProductsMenu = () => {
               </div>
 
               {/* Deals & Offers Section */}
+               <Offers />
+             {/* Deals & Offers Section */}
+              
 
-              <div className="p-4">
-                <div className="flex justify-between place-items-center">
-                  <h1 className="font-bold text-xl"> Deals For You</h1>
-                  <div>
-                    <button onClick={Prev}>
-                      <GoArrowLeft className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
-                    </button>
-                    <button onClick={Next}>
-                      <GoArrowRight className=" h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  {/* Offers Section */}
-                  <div className="flex mt-3 overflow-hidden">
-                    <div className=" flex gap-4 ">
-                      {offers.map((offer, index) => (
-                        <div
-                          className=" p-2 border-solid border-2 flex border-slate-200 rounded-xl cursor-pointer"
-                          key={index}
-                          // style={{ transform: `translateX(-${Slideritem * 100}%)` }}
-                        >
-                          <div className="w-72 flex flex-col">
-                            <div className="text-lg font-bold">
-                              {offer.info.header}
-                            </div>
-
-                            {/* <div>{offer.info.expiryTime}</div> */}
-                            <div className="text-sm font-bold text-slate-500">
-                              {offer.info.couponCode}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Offers Section end */}
-                </div>
-              </div>
-              {/* <Recomended /> */}
               {cat.map((c, index) => (
                 <ProductCategories
                   key={c.card.card.title}

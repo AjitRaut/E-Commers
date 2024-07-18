@@ -46,6 +46,17 @@ const Main = () => {
       });
   }, []);
 
+  const handleTopRatedToggle = () => {
+    const isFiltered = filtersearch.every((res) => res.info.avgRating > 4);
+
+    if (isFiltered) {
+      setfiltersearch(newdata);
+    } else {
+      let filterdata = newdata.filter((res) => res.info.avgRating > 4);
+      setfiltersearch(filterdata);
+    }
+  };
+
   return newdata.length === 0 ? (
     <ShimmerUi />
   ) : (
@@ -56,13 +67,7 @@ const Main = () => {
             <div className="max-w-6xl">
               <button
                 className=" mx-8 bg-slate-100  px-3 py-2 cursor-pointer rounded-2xl font-semibold text-center text-base text-black  border-solid border-gray-400"
-                onClick={() => {
-                  let filterdata = newdata.filter(
-                    (res) => res.info.avgRating > 4
-                  );
-
-                  setfiltersearch(filterdata);
-                }}
+                onClick={handleTopRatedToggle}
               >
                 Top Rated
               </button>
