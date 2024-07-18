@@ -64,7 +64,7 @@ const ProductItemsCrad = ({ itemCards, nestedCategories }) => {
                   src={Recomended_IMG_URL + item.card.info.imageId}
                   alt=""
                 />
-                <div className="absolute bottom-[-8px] w-full flex justify-center">
+                <div className="absolute bottom-[-11px] w-full flex justify-center">
                   <button className="bg-white h-8 w-24 border-2 shadow-md  rounded-lg px-5 text-center text-green-700 text-xl font-bold border-gray-400">
                     ADD
                   </button>

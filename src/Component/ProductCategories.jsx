@@ -4,12 +4,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductItemsCrad from "./ProductItemsCrad";
 import ProductNestedCategories from "./ProductNestedCategories";
 
-const ProductCategories = ({ categories }) => {
-  const [show, setshow] = useState(false);
+const ProductCategories = ({ categories , show}) => {
 
-  const handleshow = () => {
-    setshow(!show);
-  };
 
   return (
     <>
@@ -17,7 +13,7 @@ const ProductCategories = ({ categories }) => {
         <div key={categories.title}>
           <div
             className="flex justify-between place-items-center border-t-[12px] bg-white cursor-pointer"
-            onClick={handleshow}
+            
           >
             <div className="text-lg font-bold p-[10px]">
               {categories.title}
@@ -29,7 +25,7 @@ const ProductCategories = ({ categories }) => {
               }`}
             >
               {categories.itemCards && categories.itemCards.length > 0 && (
-              <MdKeyboardArrowDown className="h-6 w-6" />
+                <MdKeyboardArrowDown className="h-6 w-6" />
               )}
             </div>
           </div>
@@ -39,9 +35,8 @@ const ProductCategories = ({ categories }) => {
               nestedCategories={categories.categories}
             />
           )}
-        
-            <ProductNestedCategories nestedCategories={categories.categories} />
-          
+
+          <ProductNestedCategories nestedCategories={categories.categories} />
         </div>
       </div>
     </>

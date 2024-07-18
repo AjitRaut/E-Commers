@@ -133,9 +133,10 @@ const ProductsMenu = () => {
                 </div>
               </div>
               {/* <Recomended /> */}
-              {cat.map((c,index)=>
-              <ProductCategories key={index} categories={c.card.card}/>
-              )}
+              {cat.map((c, index) => (
+                <ProductCategories key={index} categories={c.card.card}
+                show={index === 0 && true} />
+              ))}
             </div>
           </div>
         </div>
