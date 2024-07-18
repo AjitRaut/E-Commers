@@ -38,9 +38,7 @@ const ProductCategories = ({ categories, show, setshow }) => {
             />
           )}
 
-          <ProductNestedCategories nestedCategories={categories.categories} 
-          
-          />
+          <ProductNestedCategories nestedCategories={categories.categories} />
         </div>
       </div>
     </>
