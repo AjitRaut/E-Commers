@@ -3,11 +3,16 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import ProductNestedCatItems from "./ProductNestedCatItems";
 
 const ProductNestedCategories = ({ nestedCategories }) => {
-  const [show, setshow] = useState(false);
 
-  const handleclick = () => {
-    setshow(!show);
+  const [show, setShow] = useState(null);
+
+  const handleclick = (index) => {
+    setShow((prevIndex) => (prevIndex === index ? null : index));
   };
+
+  // const handleclick = () => {
+  //   setShow(!show);
+  // };
 
   console.log(nestedCategories);
   if (!nestedCategories) {
@@ -21,7 +26,7 @@ const ProductNestedCategories = ({ nestedCategories }) => {
           <div key={index}>
             <div
               className="cursor-pointer flex justify-between place-items-center "
-              onClick={handleclick}
+              onClick={()=>handleclick(index)}
             >
               <div className="text-lg font-bold p-[10px]">
                 {category?.title}
@@ -38,7 +43,7 @@ const ProductNestedCategories = ({ nestedCategories }) => {
               </div>
             </div>
 
-            {show &&
+            {show === index &&
               category?.itemCards?.map((itemcard, index) => (
                 <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
               ))}

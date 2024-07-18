@@ -34,7 +34,6 @@ const ProductCategories = ({ categories, show, setshow }) => {
           {show && (
             <ProductItemsCrad
               itemCards={categories.itemCards}
-              nestedCategories={categories.categories}
             />
           )}
 
