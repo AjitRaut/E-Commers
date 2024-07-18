@@ -14,7 +14,7 @@ const ProductsMenu = () => {
 
   const [Slideritem, SetSlideritem] = useState(0);
 
-  const [show , setshow] = useState(0);
+  const [show, setshow] = useState(null);
 
   const Next = () => {
     if (offers.length - 1 === Slideritem) return false;
@@ -136,9 +136,12 @@ const ProductsMenu = () => {
               </div>
               {/* <Recomended /> */}
               {cat.map((c, index) => (
-                <ProductCategories key={index} categories={c.card.card}
-                show={index === show ? true : false} 
-                setshow={()=> setshow(index)} />
+                <ProductCategories
+                  key={c.card.card.title}
+                  categories={c.card.card}
+                  show={index === show ? true : false}
+                  setshow={() => setshow(index)}
+                />
               ))}
             </div>
           </div>
