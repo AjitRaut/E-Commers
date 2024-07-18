@@ -1,7 +1,7 @@
 import React from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
 
-const ProductItemsCrad = ({ itemCards}) => {
+const ProductItemsCrad = ({ itemCards }) => {
   console.log(itemCards);
 
   if (!itemCards) {
@@ -43,10 +43,10 @@ const ProductItemsCrad = ({ itemCards}) => {
                 </div>
 
                 {item.card.info.ratings?.aggregatedRating?.rating && (
-                  <div className="py-1">
+                  <div className="py-1 text-sm text-green-900 font-bold">
                     {item.card.info.ratings.aggregatedRating.rating}
                     {item.card.info.ratings.aggregatedRating.ratingCountV2 && (
-                      <span>
+                      <span className="text-sm text-gray-600 font-bold">
                         ({item.card.info.ratings.aggregatedRating.ratingCountV2}
                         )
                       </span>
@@ -61,7 +61,7 @@ const ProductItemsCrad = ({ itemCards}) => {
                 <img
                   className="h-36 w-full rounded-lg object-cover"
                   src={Recomended_IMG_URL + item.card.info.imageId}
-                  alt=""
+                  alt="ItemCard"
                 />
                 <div className="absolute bottom-[-11px] w-full flex justify-center">
                   <button className="bg-white h-8 w-24 border-2 shadow-md  rounded-lg px-5 text-center text-green-700 text-xl font-bold border-gray-400">

@@ -31,11 +31,7 @@ const ProductCategories = ({ categories, show, setshow }) => {
               )}
             </div>
           </div>
-          {show && (
-            <ProductItemsCrad
-              itemCards={categories.itemCards}
-            />
-          )}
+          {show && <ProductItemsCrad itemCards={categories.itemCards} />}
 
           <ProductNestedCategories nestedCategories={categories.categories} />
         </div>
