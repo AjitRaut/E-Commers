@@ -13,7 +13,6 @@ const ProductItemsCrad = ({ itemCards }) => {
 
   const handleClick = (item) => {
     dispatch(additem(item));
-
   };
 
   return (
@@ -36,9 +35,7 @@ const ProductItemsCrad = ({ itemCards }) => {
                           item?.card?.info?.price / 100}
                       </span>
                       &nbsp;
-                      <span>
-                        &#8377;{item?.card?.info?.finalPrice / 100}
-                      </span>
+                      <span>&#8377;{item?.card?.info?.finalPrice / 100}</span>
                     </>
                   ) : (
                     <span>
@@ -52,7 +49,8 @@ const ProductItemsCrad = ({ itemCards }) => {
                 {item?.card?.info?.ratings?.aggregatedRating?.rating && (
                   <div className="py-1 text-sm text-green-900 font-bold">
                     {item?.card?.info?.ratings?.aggregatedRating?.rating}
-                    {item?.card?.info?.ratings?.aggregatedRating?.ratingCountV2 && (
+                    {item?.card?.info?.ratings?.aggregatedRating
+                      ?.ratingCountV2 && (
                       <span className="text-sm text-gray-600 font-bold">
                         (
                         {
