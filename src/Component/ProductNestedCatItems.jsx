@@ -8,17 +8,19 @@ const ProductNestedCatptis = ({ pti }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   const handleClick = (pti) => {
-    const itemInCart = cartItems.find((item) => item.id === pti.id);
-    if (!itemInCart) {
-      dispatch(additem(pti));
+    if (pti && pti.id) { // Ensure pti is valid and has an id
+      const itemInCart = cartItems.find((item) => item.id === pti.id);
+      if (!itemInCart) {
+        dispatch(additem(pti));
+      }
     }
   };
 
-  const price = pti.defaultPrice
+  const price = pti?.defaultPrice
     ? pti.defaultPrice / 100
-    : pti.finalPrice
+    : pti?.finalPrice
     ? pti.finalPrice / 100
-    : pti.price
+    : pti?.price
     ? pti.price / 100
     : "Price not available";
 
@@ -27,12 +29,14 @@ const ProductNestedCatptis = ({ pti }) => {
       <div className="w-full">
         <div className="flex justify-between p-3 mb-6">
           <div className="w-3/4">
-            <div className="font-bold text-lg text-slate-700">{pti.name || "No name available"}</div>
+            <div className="font-bold text-lg text-slate-700">
+              {pti?.name || "No name available"}
+            </div>
             <div className="font-bold text-base">
               <span>&#8377;</span>
               {price}
             </div>
-            {pti.ratings?.aggregatedRating?.rating && (
+            {pti?.ratings?.aggregatedRating?.rating && (
               <div className="py-1 text-sm text-green-900 font-bold">
                 {pti.ratings.aggregatedRating.rating}
                 {pti.ratings.aggregatedRating.ratingCountV2 && (
@@ -43,13 +47,13 @@ const ProductNestedCatptis = ({ pti }) => {
               </div>
             )}
             <div className="font-normal text-base text-slate-600">
-              {pti.description || "No description available"}
+              {pti?.description || "No description available"}
             </div>
           </div>
           <div className="relative ml-8 w-3/12">
             <img
               className="h-36 w-full rounded-lg object-cover"
-              src={Recomended_IMG_URL + pti.imageId || ""}
+              src={pti?.imageId ? `${Recomended_IMG_URL}${pti.imageId}` : ""}
               alt="Nested Category Images"
             />
             <div className="absolute bottom-[-8px] w-full flex justify-center">
