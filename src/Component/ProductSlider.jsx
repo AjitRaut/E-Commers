@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { SliderIMG_URL } from "../Utils/Url";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import UseMain from "../Utils/UseMain";
+import { SliderIMG_URL } from "../Utils/Url";
 
 const ProductSlider = () => {
-  // const [data, setdata] = useState([]);
   const [Slideritem, SetSlideritem] = useState(0);
   const newdata = UseMain();
 
-  const data = newdata?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info;
-  
+  const data = newdata?.cards?.[0]?.card?.card?.gridElements?.infoWithStyle?.info || [];
+
   const Next = () => {
     if (data.length - 3 <= Slideritem) return false;
     SetSlideritem(Slideritem + 3);
@@ -20,19 +18,6 @@ const ProductSlider = () => {
     if (Slideritem === 0) return false;
     SetSlideritem(Slideritem - 3);
   };
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.145923&lng=79.08762999999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-  //     )
-  //     .then((res) => {
-  //       setdata(
-  //         res?.data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
-  //           ?.info
-  //       );
-  //     });
-  // }, []);
 
   return (
     <div className="mt-24 w-full h-32">
@@ -52,11 +37,11 @@ const ProductSlider = () => {
         </div>
 
         <div className="flex">
-          {data?.map((datt) => (
+          {data.map((datt, index) => (
             <img
               style={{ transform: `translateX(-${Slideritem * 100}%)` }}
               className="w-36 h-46 cursor-pointer"
-              key={datt.imageId}
+              key={index}
               src={`${SliderIMG_URL}${datt.imageId}`}
               alt="slider"
             />
