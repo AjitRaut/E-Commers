@@ -12,8 +12,7 @@ const UseMain = () => {
       .then((res) => {
         console.log('API Response:', res.data);
         setNewData(
-          res?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants || []
+          res?.data?.data || []
         );
       })
       .catch((error) => {
