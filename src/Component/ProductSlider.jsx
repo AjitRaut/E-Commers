@@ -10,7 +10,7 @@ const ProductSlider = () => {
   const data = newdata?.cards?.[0]?.card?.card?.gridElements?.infoWithStyle?.info || [];
 
   const Next = () => {
-    if (data.length - 3 <= Slideritem) return false;
+    if (data.length - 8 <= Slideritem) return false;
     SetSlideritem(Slideritem + 3);
   };
 
