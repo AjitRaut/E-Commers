@@ -8,7 +8,8 @@ const ProductNestedCatptis = ({ pti }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   const handleClick = (pti) => {
-    if (pti && pti.id) { // Ensure pti is valid and has an id
+    if (pti && pti.id) {
+      // Ensure pti is valid and has an id
       const itemInCart = cartItems.find((item) => item.id === pti.id);
       if (!itemInCart) {
         dispatch(additem(pti));
