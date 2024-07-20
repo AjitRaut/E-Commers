@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Card from "./Card";
-import ShimmerUi from "./ShimmerUi";
-import UseMain from "../Utils/UseMain";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Card from './Card';
+import ShimmerUi from './ShimmerUi';
+import UseMain from '../Utils/UseMain';
 
 const Main = () => {
   const newdata = UseMain();
   const [filtersearch, setFilterSearch] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const data =
-    newdata?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
-    [];
+    newdata?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
   const handleSearch = () => {
     if (search) {
@@ -25,8 +24,14 @@ const Main = () => {
   };
 
   useEffect(() => {
+    if (newdata) {
+      setFilterSearch(data); // Initialize filtersearch with data
+    }
+  }, [newdata]);
+
+  useEffect(() => {
     handleSearch();
-  }, [search, data]);
+  }, [search]);
 
   const handleTopRatedToggle = () => {
     const isFiltered = filtersearch.every((res) => res.info.avgRating > 4);
@@ -74,7 +79,7 @@ const Main = () => {
         <div className="max-w-6xl m-auto grid grid-cols-4 gap-7 transition-all px-4">
           {filtersearch.length > 0 ? (
             filtersearch.map((datt) => (
-              <Link to={"/restaurants/" + datt.info.id} key={datt.info.id}>
+              <Link to={'/restaurants/' + datt.info.id} key={datt.info.id}>
                 <Card datt={datt} />
               </Link>
             ))
