@@ -4,8 +4,6 @@ import { useDispatch } from "react-redux";
 import { additem } from "../Utils/cartSlice";
 
 const ProductItemsCrad = ({ itemCards }) => {
-  console.log(itemCards);
-
   if (!itemCards) {
     return null;
   }
