@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Card from './Card';
-import ShimmerUi from './ShimmerUi';
-import UseMain from '../Utils/UseMain';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Card from "./Card";
+import ShimmerUi from "./ShimmerUi";
+import UseMain from "../Utils/UseMain";
 
 const Main = () => {
   const newdata = UseMain();
   const [filtersearch, setFilterSearch] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const data =
-    newdata?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+    newdata?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
+    [];
 
   const handleSearch = () => {
     if (search) {
@@ -48,7 +49,7 @@ const Main = () => {
     <ShimmerUi />
   ) : (
     <div className="w-full">
-      <div className="my-24">
+      <div className="mt-24">
         <div className="max-w-6xl m-auto flex">
           <div className="max-w-6xl">
             <button
@@ -79,7 +80,7 @@ const Main = () => {
         <div className="max-w-6xl m-auto grid grid-cols-4 gap-7 transition-all px-4">
           {filtersearch.length > 0 ? (
             filtersearch.map((datt) => (
-              <Link to={'/restaurants/' + datt.info.id} key={datt.info.id}>
+              <Link to={"/restaurants/" + datt.info.id} key={datt.info.id}>
                 <Card datt={datt} />
               </Link>
             ))
