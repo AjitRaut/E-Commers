@@ -9,11 +9,6 @@ const ProductNestedCategories = ({ nestedCategories }) => {
     setShow((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  // const handleclick = () => {
-  //   setShow(!show);
-  // };
-
-  console.log(nestedCategories);
   if (!nestedCategories) {
     return null;
   }
