@@ -1,6 +1,25 @@
-import React from 'react'
+import React from "react";
+import { IMG_URL } from "../Utils/Url";
+import { IoMdStarOutline } from "react-icons/io";
+import UseMain from "../Utils/UseMain";
+import ShimmerUi from "./ShimmerUi";
 
 const TopRestorant = () => {
+  const newdata = UseMain();
+
+  const {
+    cloudinaryImageId,
+    aggregatedDiscountInfoV3: discount,
+    name,
+    avgRating,
+    cuisines,
+    sla,
+  } = newdata?.datt?.info;
+
+  const header = discount?.header;
+  const subHeader = discount?.subHeader;
+  const slaString = sla?.slaString;
+
   return (
     <>
       <div className=" max-w-full ">
@@ -32,7 +51,7 @@ const TopRestorant = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default TopRestorant
+export default TopRestorant;
