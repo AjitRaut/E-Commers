@@ -14,11 +14,11 @@ const Offers = () => {
     pmenu?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
 
   const Next = () => {
-    if (offers.length - 1 <= Slideritem) return false;
+    if (offers.length - 2 <= Slideritem) return false;
     SetSlideritem(Slideritem + 1);
   };
   const Prev = () => {
-    if (offers === 0) return false;
+    if (Slideritem === 0) return false;
     SetSlideritem(Slideritem - 1);
   };
 
@@ -46,7 +46,7 @@ const Offers = () => {
                   key={index}
                   style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                 >
-                  <div className="w-72 flex flex-col">
+                  <div className="w-[320px] flex flex-col">
                     <div className="text-lg font-bold">{offer.info.header}</div>
 
                     {/* <div>{offer.info.expiryTime}</div> */}
