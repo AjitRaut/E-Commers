@@ -6,7 +6,7 @@ import { IoMdStarOutline } from "react-icons/io";
 const Card = (props) => {
   const {
     cloudinaryImageId,
-    aggregatedDiscountInfoV3: discount,
+    aggregatedDiscountInfoV3:discount,
     name,
     avgRating,
     cuisines,
@@ -14,16 +14,14 @@ const Card = (props) => {
   } = props?.datt?.info;
 
   const header = discount?.header;
-  const subHeader = discount?.subHeader;
+  const subHeader =discount?.subHeader;
   const slaString = sla?.slaString;
-
+  
   return (
     <>
       <div className=" max-w-full ">
         <div className=" relative w-full my-2">
-          <span className=" font-sans absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">
-            {header} {subHeader}
-          </span>
+        <span className=" font-sans absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">{header} {subHeader}</span>
           <img
             className=" w-full h-60 rounded-xl cursor-pointer"
             src={IMG_URL + cloudinaryImageId}
@@ -37,7 +35,8 @@ const Card = (props) => {
           </div>
           <div className=" flex gap-1 justify-start items-center">
             <div className=" h-5 w-5 bg-green-700 rounded-full">
-              <IoMdStarOutline className=" h-5 w-5 border-none" />
+            <IoMdStarOutline className=" h-5 w-5 border-none"/>
+
             </div>
             <span className="font-bold">{avgRating}</span>
             <span className="font-bold">{slaString}</span>
