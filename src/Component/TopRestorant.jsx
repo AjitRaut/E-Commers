@@ -41,10 +41,10 @@ const TopRestorant = () => {
           <h1 className="font-serif font-bold text-xl">Top restaurant chains in Nagpur</h1>
           <div>
             <button onClick={Prev}>
-              <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
+              <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
             </button>
             <button onClick={Next}>
-              <GoArrowRight className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-6" />
+              <GoArrowRight className="h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
             </button>
           </div>
         </div>
