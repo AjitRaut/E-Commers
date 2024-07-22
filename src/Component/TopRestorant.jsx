@@ -41,8 +41,8 @@ const TopRestorant = () => {
       <div className="max-w-6xl overflow-hidden mt-24 m-auto ">
         
       <div className="flex justify-between">
-          <h1 className="font-serif font-bold text-xl ml-8">
-            What's on your mind?
+          <h1 className="font-serif font-bold text-xl">
+          Top restaurant chains in Nagpur
           </h1>
           <div className="mr-6">
             <button onClick={Prev}>
