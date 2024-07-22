@@ -5,34 +5,36 @@ import UseMain from "../Utils/UseMain";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { useState } from "react";
 
 
 const TopRestorant = () => {
+  const [Slideritem, SetSlideritem] = useState(0);
   const newdata = UseMain();
-  console.log(newdata?.cards);
+  
 
   if (
     !newdata ||
     !newdata.cards ||
     !newdata.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
   ) {
-    return <ShimmerUi />; // Display a shimmer or loading UI if data is not available
+    return <ShimmerUi />; 
   }
   const Next = () => {
-    if (data.length - 8 <= Slideritem) return false;
-    SetSlideritem(Slideritem + 3);
+    if (restaurantInfo.length - 4 <= Slideritem) return false;
+    SetSlideritem(Slideritem + 1);
   };
 
   const Prev = () => {
     if (Slideritem === 0) return false;
-    SetSlideritem(Slideritem - 3);
+    SetSlideritem(Slideritem - 1);
   };
 
   const restaurantInfo =
     newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
   if (!restaurantInfo || restaurantInfo.length === 0) {
-    return <ShimmerUi />; // Display a shimmer or loading UI if no restaurant info is available
+    return <ShimmerUi />; 
   }
 
   return (
@@ -44,7 +46,7 @@ const TopRestorant = () => {
           <h1 className="font-serif font-bold text-xl">
           Top restaurant chains in Nagpur
           </h1>
-          <div className="mr-6">
+          <div>
             <button onClick={Prev}>
               <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
             </button>
@@ -77,6 +79,7 @@ const TopRestorant = () => {
                 </span>
                 <div className="w-[273px] h-[182px]">
                   <img
+                  style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                     className="w-full h-[182px] rounded-xl cursor-pointer object-cover"
                     src={IMG_URL + cloudinaryImageId}
                     alt="card-img"
