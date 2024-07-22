@@ -27,7 +27,7 @@ const ProductSlider = () => {
           <h1 className="font-serif font-bold text-xl">What's on your mind?</h1>
           <div className="">
             <button onClick={Prev}>
-              <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
+              <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
             </button>
             <button onClick={Next}>
               <GoArrowRight className="h-8 w-8 bg-slate-200 rounded-full p-2 inline" />
