@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const {normal_item ,  nested_items} = useSelector((store) => store.cart);
+  const { normal_item, nested_items } = useSelector((store) => store.cart);
   return (
     <>
       <header className=" w-full  bg-slate-50 h-20 fixed top-0">
@@ -47,7 +47,6 @@ const Header = () => {
                 <span>
                   {/* <PiShoppingCartFill /> */}
                   <span>
-                   
                     <svg
                       className="fill-white stroke-slate-600 stroke-2"
                       viewBox="-1 0 37 32"
@@ -58,7 +57,10 @@ const Header = () => {
                       <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
                     </svg>
                   </span>
-                  <span className="absolute top-0 left-1 text-sm  font-normal"> { nested_items.length + normal_item.length}</span>
+                  <span className="absolute top-0 left-1 text-sm  font-normal">
+                    {" "}
+                    {nested_items.length + normal_item.length}
+                  </span>
                 </span>
 
                 <Link to="/cart">Cart</Link>
