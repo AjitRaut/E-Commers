@@ -21,8 +21,9 @@ const TopRestorant = () => {
     return <ShimmerUi />; 
   }
   const Next = () => {
-    if (restaurantInfo.length - 4 <= Slideritem) return false;
+    if (restaurantInfo.length - 11 <= Slideritem) return false;
     SetSlideritem(Slideritem + 1);
+    console.log(Slideritem)
   };
 
   const Prev = () => {
@@ -72,14 +73,15 @@ const TopRestorant = () => {
           const cuisineList = cuisines?.join(", ") || "N/A";
 
           return (
-            <div key={index}>
+            <div key={index} 
+            style={{ transform: `translateX(-${Slideritem * 200}%)` }}
+            >
               <div className="relative my-2">
                 <span className="font-sans absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">
                   {header} {subHeader}
                 </span>
                 <div className="w-[273px] h-[182px]">
                   <img
-                  style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                     className="w-full h-[182px] rounded-xl cursor-pointer object-cover"
                     src={IMG_URL + cloudinaryImageId}
                     alt="card-img"
