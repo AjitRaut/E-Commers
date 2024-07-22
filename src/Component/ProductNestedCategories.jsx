@@ -15,11 +15,11 @@ const ProductNestedCategories = ({ nestedCategories }) => {
 
   return (
     <>
-      <div className="">
+      <div>
         {nestedCategories.map((category, index) => (
           <div key={index}>
             <div
-              className="cursor-pointer flex justify-between place-items-center "
+              className="cursor-pointer flex justify-between place-items-center"
               onClick={() => handleclick(index)}
             >
               <div className="text-lg font-bold p-[10px]">
@@ -28,7 +28,7 @@ const ProductNestedCategories = ({ nestedCategories }) => {
               </div>
               <div
                 className={`transition-transform duration-300 ${
-                  show ? "rotate-180" : ""
+                  show === index ? "rotate-180" : ""
                 }`}
               >
                 {category.itemCards && category.itemCards.length > 0 && (
@@ -38,8 +38,11 @@ const ProductNestedCategories = ({ nestedCategories }) => {
             </div>
 
             {show === index &&
-              category?.itemCards?.map((itemcard, index) => (
-                <ProductNestedCatItems key={index} pti={itemcard?.card?.info} />
+              category?.itemCards?.map((itemcard, itemIndex) => (
+                <ProductNestedCatItems
+                  key={itemIndex}
+                  pti={itemcard?.card?.info}
+                />
               ))}
           </div>
         ))}

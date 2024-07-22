@@ -1,21 +1,17 @@
 import React from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
 import { useDispatch, useSelector } from "react-redux";
-import { additem } from "../Utils/cartSlice";
+import { nested_additem } from "../Utils/cartSlice";
 
 const ProductNestedCatptis = ({ pti }) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state) => state.cart.nested_items);
 
   const handleClick = (pti) => {
-    if (pti && pti.id) {
-      // Ensure pti is valid and has an id
-      const itemInCart = cartItems.find((item) => item.id === pti.id);
-      if (!itemInCart) {
-        dispatch(additem(pti));
-      }
-    }
-  };
+   
+        dispatch( nested_additem(pti));
+        console.log("nested item",pti)
+  }
 
   const price = pti?.defaultPrice
     ? pti.defaultPrice / 100

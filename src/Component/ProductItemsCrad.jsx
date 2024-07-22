@@ -1,7 +1,7 @@
 import React from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
 import { useDispatch } from "react-redux";
-import { additem } from "../Utils/cartSlice";
+import { normal_Additem } from "../Utils/cartSlice";
 
 const ProductItemsCrad = ({ itemCards }) => {
   if (!itemCards) {
@@ -10,7 +10,9 @@ const ProductItemsCrad = ({ itemCards }) => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
-    dispatch(additem(item));
+    dispatch(normal_Additem(item));
+
+    // console.log("ProductItemCard",item?.card?.info?.name)
   };
 
   return (

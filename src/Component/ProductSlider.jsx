@@ -7,7 +7,8 @@ const ProductSlider = () => {
   const [Slideritem, SetSlideritem] = useState(0);
   const newdata = UseMain();
 
-  const data = newdata?.cards?.[0]?.card?.card?.gridElements?.infoWithStyle?.info || [];
+  const data =
+    newdata?.cards?.[0]?.card?.card?.gridElements?.infoWithStyle?.info || [];
 
   const Next = () => {
     if (data.length - 8 <= Slideritem) return false;
@@ -36,7 +37,7 @@ const ProductSlider = () => {
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex gap-4 pl-4">
           {data.map((datt, index) => (
             <img
               style={{ transform: `translateX(-${Slideritem * 100}%)` }}
