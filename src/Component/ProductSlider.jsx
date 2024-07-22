@@ -24,7 +24,7 @@ const ProductSlider = () => {
     <div className="mt-24 w-full h-32">
       <div className="max-w-6xl m-auto overflow-hidden">
         <div className="flex justify-between">
-          <h1 className="font-serif font-bold text-xl ml-8">
+          <h1 className="font-serif font-bold text-xl">
             What's on your mind?
           </h1>
           <div className="mr-6">
