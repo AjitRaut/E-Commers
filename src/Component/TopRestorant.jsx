@@ -72,17 +72,17 @@ const TopRestorant = () => {
                 style={{ transform: `translateX(-${Slideritem * 200}%)` }}
               >
                 <div className="relative my-2">
-                  <span className="font-sans absolute left-4 text-xl text-white tracking-tighter bottom-1 font-bold">
+                  <span className="font-sans absolute left-4 text-xl text-white tracking-tighter bottom-0 font-bold">
                     {header} {subHeader}
                   </span>
-                  <div className="w-[273px] h-[182px]">
+                  <div className="w-[273px] h-[175px]">
                   
                       <img
                         className="w-full h-[182px] rounded-xl cursor-pointer object-cover"
                         src={IMG_URL + cloudinaryImageId}
                         alt="card-img"
                       />
-                  
+                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
                   </div>
                 </div>
                 <div className="">
