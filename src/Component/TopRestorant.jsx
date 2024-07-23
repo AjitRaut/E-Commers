@@ -19,13 +19,14 @@ const TopRestorant = () => {
   }
 
   const restaurantInfo = newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+  console.log(restaurantInfo)
 
   if (!restaurantInfo || restaurantInfo.length === 0) {
     return <ShimmerUi />;
   }
 
   const Next = () => {
-    if (restaurantInfo.length - 11 <= Slideritem) return false;
+    if (restaurantInfo.length - 1 <= Slideritem) return false;
     SetSlideritem(Slideritem + 1);
   };
 
@@ -48,7 +49,7 @@ const TopRestorant = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-[45px]">
           {restaurantInfo.map((restaurant, index) => {
             const {
               cloudinaryImageId,
@@ -69,7 +70,7 @@ const TopRestorant = () => {
                 <div
                   key={index}
                   className="my-4"
-                  style={{ transform: `translateX(-${Slideritem * 200}%)` }}
+                  style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                 >
                   <div className="relative my-2">
                     <div className="w-[273px] h-[175px] relative">
@@ -79,7 +80,7 @@ const TopRestorant = () => {
                         alt="card-img"
                       />
                       <div className="absolute bottom-[-7px] left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
-                      <span className="font-sans absolute left-4 bottom-0 text-xl text-white tracking-tighter font-bold shadow-lg">
+                      <span className="font-sans absolute left-4 bottom-0 text-xl text-white tracking-tighter font-black shadow-lg">
                         {header} {subHeader}
                       </span>
                     </div>
