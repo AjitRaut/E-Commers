@@ -5,7 +5,7 @@ import ProductNestedCatptis from "./ProductNestedCatItems";
 
 const Cart = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
-  
+
   console.log("nested_items:", nested_items);
   console.log("normal_item:", normal_item);
 

@@ -46,7 +46,10 @@ const ProductSlider = () => {
             />
           ))}
         </div>
+    <hr className="my-3"/>
+
       </div>
+
     </div>
   );
 };

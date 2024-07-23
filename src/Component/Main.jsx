@@ -49,7 +49,7 @@ const Main = () => {
     <ShimmerUi />
   ) : (
     <div className="w-full">
-      <div className="mt-24">
+      <div className="">
         <div className="max-w-6xl m-auto flex">
           <div className="max-w-6xl">
             <button

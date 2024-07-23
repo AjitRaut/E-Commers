@@ -7,10 +7,13 @@ import TopRestorant from './TopRestorant'
 const Body = () => {
   return (
     <>
-     <ProductSlider />
+    <div className='mt-24'>
+    <ProductSlider />
      {/* <Main />  */}
      <TopRestorant />
      {/* <ProductsMoreMenu /> */}
+    </div>
+     
     </>
   )
 }
