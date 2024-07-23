@@ -15,13 +15,13 @@ const TopRestorant = () => {
     !newdata.cards ||
     !newdata.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
   ) {
-    return <ShimmerUi />; 
+    return <ShimmerUi />;
   }
 
   const restaurantInfo = newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
   if (!restaurantInfo || restaurantInfo.length === 0) {
-    return <ShimmerUi />; 
+    return <ShimmerUi />;
   }
 
   const Next = () => {
@@ -39,7 +39,7 @@ const TopRestorant = () => {
       <div className="max-w-6xl overflow-hidden mt-24 m-auto ">
         <div className="flex justify-between">
           <h1 className="font-serif font-bold text-xl">Top restaurant chains in Nagpur</h1>
-          <div >
+          <div>
             <button onClick={Prev}>
               <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
             </button>
@@ -66,41 +66,40 @@ const TopRestorant = () => {
 
             return (
               <Link to={"/restaurants/" + restaurant.info.id}>
-              <div
-                key={index}
-                className="my-4"
-                style={{ transform: `translateX(-${Slideritem * 200}%)` }}
-              >
-                <div className="relative my-2">
-                  <span className="font-sans absolute left-4 text-xl text-white tracking-tighter bottom-0 font-bold">
-                    {header} {subHeader}
-                  </span>
-                  <div className="w-[273px] h-[175px]">
-                  
+                <div
+                  key={index}
+                  className="my-4"
+                  style={{ transform: `translateX(-${Slideritem * 200}%)` }}
+                >
+                  <div className="relative my-2">
+                    <div className="w-[273px] h-[175px] relative">
                       <img
                         className="w-full h-[182px] rounded-xl cursor-pointer object-cover"
                         src={IMG_URL + cloudinaryImageId}
                         alt="card-img"
                       />
-                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
-                  </div>
-                </div>
-                <div className="">
-                  <div className="font-bold text-lg from-neutral-800">
-                    <Link to={"/restaurants/" + restaurant.info.id}>{name}</Link>
-                  </div>
-                  <div className="flex gap-1 justify-start items-center">
-                    <div className="h-5 w-5 bg-green-700 rounded-full flex items-center justify-center">
-                      <IoMdStarOutline className="h-5 w-5 text-white" />
+                      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
+                      <span className="font-sans absolute left-4 bottom-2 text-xl text-white tracking-tighter font-bold shadow-lg">
+                        {header} {subHeader}
+                      </span>
                     </div>
-                    <span className="font-bold">{avgRating}</span>
-                    <span className="font-bold">{slaString}</span>
                   </div>
-                  <div className="w-full h-7 overflow-hidden font-light text-lg font-serif from-stone-400">
-                    <p>{cuisineList}</p>
+                  <div className="">
+                    <div className="font-bold text-lg from-neutral-800">
+                      <Link to={"/restaurants/" + restaurant.info.id}>{name}</Link>
+                    </div>
+                    <div className="flex gap-1 justify-start items-center">
+                      <div className="h-5 w-5 bg-green-700 rounded-full flex items-center justify-center">
+                        <IoMdStarOutline className="h-5 w-5 text-white" />
+                      </div>
+                      <span className="font-bold">{avgRating}</span>
+                      <span className="font-bold">{slaString}</span>
+                    </div>
+                    <div className="w-full h-7 overflow-hidden font-light text-lg font-serif from-stone-400">
+                      <p>{cuisineList}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
             );
           })}
