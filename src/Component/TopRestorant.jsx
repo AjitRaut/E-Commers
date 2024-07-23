@@ -78,8 +78,8 @@ const TopRestorant = () => {
                         src={IMG_URL + cloudinaryImageId}
                         alt="card-img"
                       />
-                      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
-                      <span className="font-sans absolute left-4 bottom-2 text-xl text-white tracking-tighter font-bold shadow-lg">
+                      <div className="absolute bottom-[-7px] left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
+                      <span className="font-sans absolute left-4 bottom-0 text-xl text-white tracking-tighter font-bold shadow-lg">
                         {header} {subHeader}
                       </span>
                     </div>
