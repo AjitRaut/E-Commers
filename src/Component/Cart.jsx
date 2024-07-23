@@ -5,23 +5,22 @@ import ProductNestedCatptis from "./ProductNestedCatItems";
 
 const Cart = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
+  
+  console.log("nested_items:", nested_items);
+  console.log("normal_item:", normal_item);
 
-  if (normal_item.length === 0 || nested_items.length === 0) {
-    return <h2 className="mt-20">Data is Not available</h2>;
-  }
-
-  console.log(normal_item);
+  // if (normal_item.length === 0 || nested_items.length === 0) {
+  //   return <h2 className="mt-20">Data is Not available</h2>;
+  // }
 
   return (
     <div>
       <div className="mt-20">
         <div className="w-3/4 m-auto">
-          <>
-            {nested_items.map((item, index) => (
-              <ProductNestedCatptis key={index} pti={item} />
-            ))}
-            <ProductItemsCrad itemCards={normal_item} />
-          </>
+          {nested_items.map((item, index) => (
+            <ProductNestedCatptis key={index} pti={item} />
+          ))}
+          <ProductItemsCrad itemCards={normal_item} />
         </div>
       </div>
     </div>

@@ -51,12 +51,14 @@ const ProductsMenu = () => {
               </div>
               <div className="pmenu-content">
                 <div className=" p-3 bg-white border-solid border-2  border-slate-200 rounded-xl">
-                  <span className=" font-bold">{avgRating}</span>
-                  <span className=" font-bold">({totalRatingsString})</span>
-                  <span className=" m-2 font-serif text-center text-xl text-slate-400 leading-4">
-                    .
-                  </span>
-                  <span className=" font-bold">{costForTwoMessage}</span>
+                  <div className="flex items-center">
+                    <span className="font-bold">{avgRating}</span>
+                    <span className="font-bold">({totalRatingsString})</span>
+                    <span className="mx-2 font-serif text-center text-xl text-slate-400 leading-4">
+                      .
+                    </span>
+                    <span className="font-bold">{costForTwoMessage}</span>
+                  </div>
                   <div className=" text-orange-600 font-medium text-sm">
                     {cuisines.join(" ,")}
                   </div>
