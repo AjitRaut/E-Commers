@@ -12,7 +12,6 @@ const ProductItemsCrad = ({ itemCards }) => {
   const handleClick = (item) => {
     dispatch(normal_Additem(item));
 
-    console.log("ProductItemCard",item)
   };
 
   return (

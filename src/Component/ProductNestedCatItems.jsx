@@ -10,7 +10,7 @@ const ProductNestedCatptis = ({ pti }) => {
   const handleClick = (pti) => {
    
         dispatch( nested_additem(pti));
-        console.log("nested item",pti)
+        
   }
 
   const price = pti?.defaultPrice
