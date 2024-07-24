@@ -46,7 +46,7 @@ const ProductSlider = () => {
             />
           ))}
         </div>
-    <hr className="my-3"/>
+    <hr className="my-10 border border-solid"/>
 
       </div>
 

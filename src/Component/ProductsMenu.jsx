@@ -96,6 +96,7 @@ const ProductsMenu = () => {
           </div>
         </div>
       )}
+      
     </>
   );
 };

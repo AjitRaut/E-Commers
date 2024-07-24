@@ -37,7 +37,7 @@ const TopRestorant = () => {
 
   return (
     <>
-      <div className="max-w-6xl overflow-hidden mt-32 m-auto ">
+      <div className="max-w-6xl overflow-hidden mt-40 m-auto ">
         <div className="flex justify-between">
           <h1 className="font-serif font-bold text-xl">Top restaurant chains in Nagpur</h1>
           <div>
