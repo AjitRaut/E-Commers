@@ -18,8 +18,8 @@ const TopRestorant = () => {
     return <ShimmerUi />;
   }
 
-  const restaurantInfo = newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-  console.log(restaurantInfo)
+  const restaurantInfo =
+    newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
   if (!restaurantInfo || restaurantInfo.length === 0) {
     return <ShimmerUi />;
@@ -39,7 +39,9 @@ const TopRestorant = () => {
     <>
       <div className="max-w-6xl overflow-hidden mt-40 m-auto ">
         <div className="flex justify-between">
-          <h1 className="font-serif font-bold text-xl">Top restaurant chains in Nagpur</h1>
+          <h1 className="font-serif font-bold text-xl">
+            Top restaurant chains in Nagpur
+          </h1>
           <div>
             <button onClick={Prev}>
               <GoArrowLeft className="h-8 w-8 bg-slate-200 rounded-full p-2 inline mr-2" />
@@ -87,7 +89,9 @@ const TopRestorant = () => {
                   </div>
                   <div className="">
                     <div className="font-bold text-lg from-neutral-800">
-                      <Link to={"/restaurants/" + restaurant.info.id}>{name}</Link>
+                      <Link to={"/restaurants/" + restaurant.info.id}>
+                        {name}
+                      </Link>
                     </div>
                     <div className="flex gap-1 justify-start items-center">
                       <div className="h-5 w-5 bg-green-700 rounded-full flex items-center justify-center">
