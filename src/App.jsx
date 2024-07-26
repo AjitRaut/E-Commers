@@ -11,6 +11,7 @@ import useOnOffStatus from "./Utils/useOnOffStatus";
 import { Provider } from "react-redux";
 import productstore from "./Utils/ProductStore";
 import Cart from "./Component/Cart";
+import ProductSliderMenu from "./Component/ProductSliderMenu";
 
 function App() {
   const OnOffStatus = useOnOffStatus();
@@ -52,6 +53,10 @@ const AppRouter = createBrowserRouter([
       {
         path: "/restaurants/:infoId",
         element: <ProductsMenu />,
+      },
+      {
+        path: "/restaurant/:dattId",
+        element: <ProductSliderMenu />,
       },
       {
         path : "/cart",

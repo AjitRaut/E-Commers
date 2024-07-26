@@ -1,20 +1,19 @@
-import React from 'react'
-import useProductSliderApi from '../Utils/useProductSliderApi'
+import React from "react";
+import useProductSliderApi from "../Utils/useProductSliderApi";
+import { useParams } from "react-router-dom";
 
-const ProductSliderMenu = () => {
-    const product_Slider_Menu = useProductSliderApi();
-    
-    console.log(product_Slider_Menu)
+const ProductSliderMenu = ({ restid }) => {
+  const product_Slider_Menu = useProductSliderApi(restid);
+
   return (
-    <>
-      {
-        product_Slider_Menu.map((pmi,index)=>{
-          console.log()
-          {pmi?.card?.card?.info?.name}
-        })
-      }
-    </>
-  )
-}
+    <div className="mt-44">
+      {product_Slider_Menu?.map((pmi, index) => (
+        <div key={index}>
+          {pmi?.card?.card?.info?.name} {/* Displaying product info */}
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default ProductSliderMenu
+export default ProductSliderMenu;

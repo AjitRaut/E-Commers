@@ -4,6 +4,7 @@ import axios from "axios";
 import { ProductsMenu_URL } from "../Utils/Url";
 
 const useProductMenu = (infoId) => {
+  console.log(infoId)
   const [pmenu, setpmenu] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const useProductMenu = (infoId) => {
       setpmenu(res?.data?.data || null);
     });
   }, []);
-  
+
   return pmenu;
 };
 

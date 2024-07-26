@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import UseMain from "../Utils/UseMain";
 import { SliderIMG_URL } from "../Utils/Url";
+import { Link } from "react-router-dom";
 
 const ProductSlider = () => {
   const [Slideritem, SetSlideritem] = useState(0);
@@ -36,14 +37,21 @@ const ProductSlider = () => {
         </div>
 
         <div className="flex gap-4 pl-4">
+        
           {data.map((datt, index) => (
-            <img
+            <Link to={"/restaurant/" + datt.id}>
+              <div className="w-[144px] h[192px]">
+              <img
               style={{ transform: `translateX(-${Slideritem * 100}%)` }}
-              className="w-36 h-46 cursor-pointer"
+              className="w-[144px] h-46 cursor-pointer"
               key={index}
               src={`${SliderIMG_URL}${datt.imageId}`}
               alt="slider"
             />
+              </div>
+          
+          </Link>
+
           ))}
         </div>
     <hr className="my-10 border border-solid"/>
