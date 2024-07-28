@@ -24,13 +24,14 @@ const AllRestaurant = () => {
   return (
     <>
     <div className="max-w-6xl overflow-hidden m-auto ">
-      <div>
-        <AllRestFilter />
-      </div>
+     
       <div className="flex justify-between">
         <h1 className="font-serif font-bold text-xl">
         Restaurants with online food delivery in Nagpur
         </h1>
+      </div>
+      <div>
+        <AllRestFilter />
       </div>
       <div className=" grid grid-cols-4">
         {restaurantInfo.map((restaurant, index) => {
