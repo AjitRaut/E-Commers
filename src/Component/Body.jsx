@@ -2,6 +2,7 @@ import React from 'react'
 import ProductSlider from './ProductSlider'
 import Main from './Main'
 import TopRestorant from './TopRestorant'
+import AllRestaurant from './AllRestaurant'
 
 const Body = () => {
   return (
@@ -10,6 +11,7 @@ const Body = () => {
     <ProductSlider />
      {/* <Main />  */}
      <TopRestorant />
+      <AllRestaurant />
      
     </div>
      

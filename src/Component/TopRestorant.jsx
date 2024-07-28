@@ -107,6 +107,7 @@ const TopRestorant = () => {
             );
           })}
         </div>
+        <hr className="my-7 border border-solid" />
       </div>
     </>
   );
