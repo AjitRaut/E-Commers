@@ -50,15 +50,17 @@ const Offers = () => {
                   <div className="h-10 w-10">
                     <img
                       src={offers_logo + offer?.info?.offerLogo}
-                      alt="" 
+                      alt="Offesr Logo" 
                     />
                   </div>
                   <div className="w-[260px] flex flex-col">
-                    <div className="text-lg font-bold">{offer.info.header}</div>
+                    <div className="text-base font-bold">{offer.info.header}</div>
 
                     {/* <div>{offer.info.expiryTime}</div> */}
                     <div className="text-sm font-bold text-slate-500">
-                      {offer.info.couponCode}
+                      {offer.info.couponCode || offer?.info?.expiryTime
+                      || offer?.info?.showExpiryTimer
+}
                     </div>
                   </div>
                 </div>
