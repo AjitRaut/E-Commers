@@ -3,6 +3,7 @@ import ProductSlider from './ProductSlider'
 import Main from './Main'
 import TopRestorant from './TopRestorant'
 import AllRestaurant from './AllRestaurant'
+import BestPlaces from './BestPlaces'
 
 const Body = () => {
   return (
@@ -12,6 +13,7 @@ const Body = () => {
      {/* <Main />  */}
      <TopRestorant />
       <AllRestaurant />
+      <BestPlaces />
      
     </div>
      
