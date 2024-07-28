@@ -12,13 +12,13 @@ const FooterLinks = () => {
               <p className="text-white">Swiggy</p>
             </div>
             <div>
-              <p>© 2024 Bundl Technologies Pvt. Ltd</p>
+              <p className="text-footer">© 2024 Bundl Technologies Pvt. Ltd</p>
             </div>
           </div>
 
           <div className="mt-5">
             <ul>
-              <li>Company</li>
+              <li className="font-bold text-lg">Company</li>
               <li className="my-3">About</li>
               <li className="my-3">Company</li>
               <li className="my-3">Careers</li>
@@ -30,20 +30,31 @@ const FooterLinks = () => {
           </div>
           <div className="mt-5">
             <ul>
-              <li>Contact us</li>
-              <li>Help & Support</li>
-              <li>Partner with us</li>
-              <li>Ride with us</li>
+              <li className="font-bold text-lg">Contact us</li>
+              <li className="my-3">Help & Support</li>
+              <li className="my-3">Partner with us</li>
+              <li className="my-3">Ride with us</li>
             </ul>
             <ul className="mt-12">
-              <li>Legal</li>
-              <li>Terms & Conditions</li>
-              <li>Cookie Policy</li>
-              <li>Privacy Policy</li>
-              <li>Investor Relations</li>
+              <li className="my-3">Legal</li>
+              <li className="my-3">Terms & Conditions</li>
+              <li className="my-3">Cookie Policy</li>
+              <li className="my-3">Privacy Policy</li>
+              <li className="my-3">Investor Relations</li>
             </ul>
           </div>
-          <div>4</div>
+          <div className="mt-5">
+            <ul>
+              <li className="my-3">We deliver to:</li>
+              <li className="my-3">Bangalore</li>
+              <li className="my-3">Gurgaon</li>
+              <li className="my-3">Hyderabad</li>
+              <li className="my-3">Delhi</li>
+              <li className="my-3">Mumbai</li>
+              <li className="my-3">Pune</li>
+              <li className="my-3"></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
