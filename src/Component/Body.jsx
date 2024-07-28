@@ -7,6 +7,7 @@ import BestPlaces from './BestPlaces'
 import BestCousins from './BestCousins'
 import ExploreRestaaurant from './ExploreRestaaurant'
 import Footer from './Footer'
+import FooterLinks from './FooterLinks'
 
 const Body = () => {
   return (
@@ -20,6 +21,7 @@ const Body = () => {
       <BestCousins />
       <ExploreRestaaurant />
       <Footer />
+      <FooterLinks />
      
     </div>
      
