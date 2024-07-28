@@ -27,7 +27,7 @@ const BestPlaces = () => {
         <h1 className='text-lg font-bold'>Best Places to Eat Across Cities</h1>
       <div className='grid grid-cols-4 gap-4'>
         {initialBrands.map((brand, index) => (
-          <button key={index} className='m-2 p-2 border text-center border-gray-300 rounded-2xl'>
+          <button key={index} className='mt-2 p-2 border text-center border-gray-300 rounded-xl'>
             <div className='text-center'>
               {brand.text}
             </div>
@@ -35,7 +35,7 @@ const BestPlaces = () => {
         ))}
         {!showMore && (
           <button 
-            className='mt-2 p-2 border text-center border-gray-300 rounded-2xl'
+            className='mt-2 p-2 border text-center border-gray-300 rounded-xl'
             onClick={() => setShowMore(true)}
           >
             Show More
