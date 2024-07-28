@@ -89,9 +89,7 @@ const TopRestorant = () => {
                   </div>
                   <div className="">
                     <div className="font-bold text-lg from-neutral-800">
-                      <Link to={"/restaurants/" + restaurant.info.id}>
-                        {name}
-                      </Link>
+                      {name}
                     </div>
                     <div className="flex gap-1 justify-start items-center">
                       <div className="h-5 w-5 bg-green-700 rounded-full flex items-center justify-center">

@@ -30,7 +30,7 @@ const Card = (props) => {
         </div>
 
         <div className="w-full">
-          <div className=" w-full h-8 overflow-hidden font-bold from-neutral-800 text-lg">
+          <div className=" w-full h-8 overflow-hidden font-bold from-neutral-800 text-lg font-gilroy">
             {name}
           </div>
           <div className=" flex gap-1 justify-start items-center">
@@ -41,7 +41,7 @@ const Card = (props) => {
             <span className="font-bold">{avgRating}</span>
             <span className="font-bold">{slaString}</span>
           </div>
-          <div className="w-full h-7 overflow-hidden font-light text-lg font-serif from-stone-400">
+          <div className="w-full h-7 overflow-hidden font-light text-lg from-stone-400 font-gilroy">
             <p>{cuisines.join(", ")}</p>
           </div>
         </div>
