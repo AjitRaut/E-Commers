@@ -4,6 +4,7 @@ import ShimmerUi from './ShimmerUi';
 import { IoMdStarOutline } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { IMG_URL } from '../Utils/Url';
+import AllRestFilter from './AllRestFilter';
 
 const AllRestaurant = () => {
   const newdata = UseMain();
@@ -23,6 +24,9 @@ const AllRestaurant = () => {
   return (
     <>
     <div className="max-w-6xl overflow-hidden m-auto ">
+      <div>
+        <AllRestFilter />
+      </div>
       <div className="flex justify-between">
         <h1 className="font-serif font-bold text-xl">
         Restaurants with online food delivery in Nagpur
