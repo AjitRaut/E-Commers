@@ -3,6 +3,7 @@ import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useProductMenu from "../Utils/useProductMenu";
+import { offers_logo } from "../Utils/Url";
 
 const Offers = () => {
   const { infoId } = useParams();
@@ -42,10 +43,16 @@ const Offers = () => {
             <div className=" flex gap-4 ">
               {offers.map((offer, index) => (
                 <div
-                  className=" p-2 border-solid border-2 flex border-slate-200 rounded-xl cursor-pointer"
+                  className=" p-2 border-solid border-2 flex place-items-center border-slate-200 rounded-xl cursor-pointer"
                   key={index}
                   style={{ transform: `translateX(-${Slideritem * 100}%)` }}
                 >
+                  <div className="h-10 w-10">
+                    <img
+                      src={offers_logo + offer?.info?.offerLogo}
+                      alt="" 
+                    />
+                  </div>
                   <div className="w-[320px] flex flex-col">
                     <div className="text-lg font-bold">{offer.info.header}</div>
 
@@ -66,3 +73,4 @@ const Offers = () => {
 };
 
 export default Offers;
+

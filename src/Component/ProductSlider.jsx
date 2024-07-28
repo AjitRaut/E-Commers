@@ -37,27 +37,22 @@ const ProductSlider = () => {
         </div>
 
         <div className="flex gap-4 pl-4">
-        
           {data.map((datt, index) => (
             <Link to={"/restaurant/" + datt.id}>
               <div className="w-[144px] h[192px]">
-              <img
-              style={{ transform: `translateX(-${Slideritem * 100}%)` }}
-              className="w-[144px] h-46 cursor-pointer"
-              key={index}
-              src={`${SliderIMG_URL}${datt.imageId}`}
-              alt="slider"
-            />
+                <img
+                  style={{ transform: `translateX(-${Slideritem * 100}%)` }}
+                  className="w-[144px] h-46 cursor-pointer"
+                  key={index}
+                  src={`${SliderIMG_URL}${datt.imageId}`}
+                  alt="slider"
+                />
               </div>
-          
-          </Link>
-
+            </Link>
           ))}
         </div>
-    <hr className="my-10 border border-solid"/>
-
+        <hr className="my-10 border border-solid" />
       </div>
-
     </div>
   );
 };

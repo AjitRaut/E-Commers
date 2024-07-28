@@ -8,7 +8,7 @@ const ProductNestedCatptis = ({ pti }) => {
   const cartItems = useSelector((state) => state.cart.nested_items);
 
   const handleClick = (pti) => {
-   
+        console.log(pti)
         dispatch( nested_additem(pti));
         
   }

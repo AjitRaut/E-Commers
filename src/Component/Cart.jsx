@@ -18,9 +18,20 @@ const Cart = () => {
       <div className="mt-20">
         <div className="w-3/4 m-auto">
           {nested_items.map((item, index) => (
-            <ProductNestedCatptis key={index} pti={item} />
+            // <ProductNestedCatptis key={index} pti={item} />
+             <div key={index}>
+               {item?.name}
+             </div>
           ))}
-          <ProductItemsCrad itemCards={normal_item} />
+          {/* <ProductItemsCrad itemCards={normal_item} /> */}
+          <div className="font-bold">
+            {normal_item.map((item, index) => (
+              <div key={index}>
+                 {item?.card?.info?.name}
+              </div>
+            ))}
+          </div>
+          
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@ import axios from "axios";
 import { ProductsMenu_URL } from "../Utils/Url";
 
 const useProductMenu = (infoId) => {
-  console.log(infoId)
   const [pmenu, setpmenu] = useState([]);
 
   useEffect(() => {
