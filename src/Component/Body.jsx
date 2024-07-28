@@ -4,6 +4,7 @@ import Main from './Main'
 import TopRestorant from './TopRestorant'
 import AllRestaurant from './AllRestaurant'
 import BestPlaces from './BestPlaces'
+import BestCousins from './BestCousins'
 
 const Body = () => {
   return (
@@ -14,6 +15,7 @@ const Body = () => {
      <TopRestorant />
       <AllRestaurant />
       <BestPlaces />
+      <BestCousins />
      
     </div>
      
