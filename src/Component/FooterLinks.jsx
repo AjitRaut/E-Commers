@@ -3,10 +3,10 @@ import { SiSwiggy } from "react-icons/si";
 
 const FooterLinks = () => {
   return (
-    <div className="bg-customDark">
-      <div className="max-w-5xl m-auto">
-        <div className="grid grid-cols-4 gap-4 text-white">
-          <div className="mt-5 flex-row justify-between w-40">
+    <div className="bg-customDark ">
+      <div className="max-w-5xl m-auto ">
+        <div className="grid grid-cols-4 gap-4 text-white pb-20 ">
+          <div className="mt-5  flex-row justify-between w-40">
             <div className="flex place-items-center">
               <SiSwiggy className="text-white w-9 h-12" />
               <p className="text-white">Swiggy</p>
