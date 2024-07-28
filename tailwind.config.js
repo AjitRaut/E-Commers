@@ -9,6 +9,7 @@ export default {
       colors: {
         customDark: "#02060C",
         footer: 'rgba(255, 255, 255, 0.6)',
+        f1: "#F0F0F5"
       },
     },
   },

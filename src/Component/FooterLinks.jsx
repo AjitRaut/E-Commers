@@ -19,40 +19,40 @@ const FooterLinks = () => {
           <div className="mt-5">
             <ul>
               <li className="font-bold text-lg">Company</li>
-              <li className="my-3">About</li>
-              <li className="my-3">Company</li>
-              <li className="my-3">Careers</li>
-              <li className="my-3">Team</li>
-              <li className="my-3">Swiggy One</li>
-              <li className="my-3">Swiggy Instamart</li>
-              <li className="my-3">Swiggy Genie</li>
+              <li className="my-3 text-footer">About</li>
+              <li className="my-3text-footer">Company</li>
+              <li className="my-3 text-footer">Careers</li>
+              <li className="my-3 text-footer">Team</li>
+              <li className="my-3 text-footer">Swiggy One</li>
+              <li className="my-3 text-footer">Swiggy Instamart</li>
+              <li className="my-3 text-footer">Swiggy Genie</li>
             </ul>
           </div>
           <div className="mt-5">
             <ul>
               <li className="font-bold text-lg">Contact us</li>
-              <li className="my-3">Help & Support</li>
-              <li className="my-3">Partner with us</li>
-              <li className="my-3">Ride with us</li>
+              <li className="my-3 text-footer">Help & Support</li>
+              <li className="my-3 text-footer">Partner with us</li>
+              <li className="my-3 text-footer">Ride with us</li>
             </ul>
             <ul className="mt-12">
-              <li className="my-3">Legal</li>
-              <li className="my-3">Terms & Conditions</li>
-              <li className="my-3">Cookie Policy</li>
-              <li className="my-3">Privacy Policy</li>
-              <li className="my-3">Investor Relations</li>
+              <li className="my-3 font-bold text-lg">Legal</li>
+              <li className="my-3 text-footer">Terms & Conditions</li>
+              <li className="my-3 text-footer">Cookie Policy</li>
+              <li className="my-3 text-footer">Privacy Policy</li>
+              <li className="my-3 text-footer">Investor Relations</li>
             </ul>
           </div>
           <div className="mt-5">
             <ul>
-              <li className="my-3">We deliver to:</li>
-              <li className="my-3">Bangalore</li>
-              <li className="my-3">Gurgaon</li>
-              <li className="my-3">Hyderabad</li>
-              <li className="my-3">Delhi</li>
-              <li className="my-3">Mumbai</li>
-              <li className="my-3">Pune</li>
-              <li className="my-3"></li>
+              <li className="font-bold text-lg">We deliver to:</li>
+              <li className="my-3 text-footer">Bangalore</li>
+              <li className="my-3 text-footer">Gurgaon</li>
+              <li className="my-3 text-footer">Hyderabad</li>
+              <li className="my-3 text-footer">Delhi</li>
+              <li className="my-3 text-footer">Mumbai</li>
+              <li className="my-3 text-footer">Pune</li>
+              <li className="my-3 text-footer"></li>
             </ul>
           </div>
         </div>
