@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-    <div className="w-full bg-orange-100">
+    <div className="w-full  bg-orange-100">
     <div className="mt-40 max-w-6xl m-auto">
-        <div className=" flex justify-evenly place-items-center">
+        <div className=" h-28 flex justify-evenly place-items-center">
           <div className="w-[400px]">
             <h1 className="text-2xl font-extrabold text-slate-700">
               For better experience,download the Swiggy app now

@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         gilroy: ['Gilroy'],
       },
+      colors: {
+        customDark: '#02060C',
+      },
     },
   },
   plugins: [],
