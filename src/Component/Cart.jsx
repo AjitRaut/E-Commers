@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ProductItemsCrad from "./ProductItemsCrad";
 import ProductNestedCatptis from "./ProductNestedCatItems";
+import CartCard from "./CartCard";
 
 const Cart = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
@@ -23,15 +24,8 @@ const Cart = () => {
                {item?.name}
              </div>
           ))}
-          {/* <ProductItemsCrad itemCards={normal_item} /> */}
-          <div className="font-bold">
-            {normal_item.map((item, index) => (
-              <div key={index}>
-                 {item?.card?.info?.name}
-              </div>
-            ))}
-          </div>
           
+          <CartCard cards={normal_item} />
         </div>
       </div>
     </div>
