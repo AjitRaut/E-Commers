@@ -35,7 +35,8 @@ const CartCard = ({ cards }) => {
         <h4 className="text-lg font-semibold">Bill Details</h4>
         <div className="flex justify-between">
           <span>Item Total</span>
-          <span>₹379</span>
+          <span>₹{card?.card?.info?.defaultPrice / 100 || card?.card?.info?.price / 100
+        }</span>
         </div>
         <div className="flex justify-between">
           <span>Delivery Fee</span>
