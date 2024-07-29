@@ -25,7 +25,7 @@ const OfferFooter = () => {
             </span>
           </div>
           <hr className="my-3 border border-solid border-gray-300" />
-          <div>
+          <div className="text-offerftbg2">
             {lastCard && (
               <div>
                 <p className="text-sm font-semibold">{data?.name}</p>
@@ -38,7 +38,7 @@ const OfferFooter = () => {
           <hr className="my-3 border border-solid border-gray-300" />
           <div className="w-full">
             <div className="flex justify-center place-items-center">
-              <p className="font-bold text-sm my-6">For better experience, download the Swiggy app now</p>
+              <p className="font-bold text-sm my-3">For better experience, download the Swiggy app now</p>
             </div>
               <div className="flex justify-center place-items-center">
                 <div className="h-12 max-w-[208px]">

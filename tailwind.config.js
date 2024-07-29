@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         offerftbg:"#f1f1f6",
+        offerftbg2:"#a9abb2",
         customDark: "#02060C",
         footer: 'rgba(255, 255, 255, 0.6)',
         f1: "#F0F0F5",
