@@ -12,7 +12,7 @@ const OfferFooter = () => {
 
   return (
     <div className="w-full">
-      <div className="max-w-6xl m-auto bg-offerftbg ">
+      <div className="max-w-6xl pb-32 m-auto bg-offerftbg ">
         <div className="p-4">
           <div className="flex gap-2 place-items-center">
             <img
@@ -25,11 +25,11 @@ const OfferFooter = () => {
             </span>
           </div>
           <hr className="my-3 border border-solid border-gray-300" />
-          <div className="text-offerftbg2">
+          <div className="text-offerftbg2 text-xs">
             {lastCard && (
               <div>
-                <p className="text-sm font-semibold">{data?.name}</p>
-                <p className="text-xs">{data?.area}</p>
+                <p className="text-sm font-bold">{data?.name}</p>
+                <p className="text-xs">(Outlet :{data?.area})</p>
                 {/* Add more details if needed */}
                 <p>{data?.completeAddress}</p>
               </div>
