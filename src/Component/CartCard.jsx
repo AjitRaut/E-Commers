@@ -3,7 +3,7 @@ import { Recomended_IMG_URL } from "../Utils/Url";
 
 const CartCard = ({ cards }) => {
   if (!cards || cards.length === 0) {
-    return <div>No items in the cart</div>;
+    return <div></div>;
   }
 
   return (
