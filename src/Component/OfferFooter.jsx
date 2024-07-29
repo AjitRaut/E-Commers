@@ -40,7 +40,7 @@ const OfferFooter = () => {
             <div className="flex justify-center place-items-center">
               <p className="font-bold text-sm my-3">For better experience, download the Swiggy app now</p>
             </div>
-              <div className="flex justify-center place-items-center">
+              <div className="flex justify-center gap-4 place-items-center">
                 <div className="h-12 max-w-[208px]">
                   <img
                     className="h-full w-full"
