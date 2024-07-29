@@ -35,21 +35,23 @@ const CartCard = ({ cards }) => {
         <h4 className="text-lg font-semibold">Bill Details</h4>
         <div className="flex justify-between">
           <span>Item Total</span>
-          <span>₹{card?.card?.info?.defaultPrice / 100 || card?.card?.info?.price / 100
+          <span>₹{Math.floor(card?.card?.info?.defaultPrice / 100 || card?.card?.info?.price / 100)
         }</span>
         </div>
         <div className="flex justify-between">
           <span>Delivery Fee</span>
-          <span>₹{card?.card?.info?.defaultPrice / 100 / 14 || card?.card?.info?.price / 100 / 14
+          <span>₹{Math.floor(card?.card?.info?.defaultPrice / 100 / 14 || card?.card?.info?.price / 100 / 14)
         }</span>
         </div>
         <div className="flex justify-between">
           <span>Platform Fee</span>
-          <span>₹6</span>
+          <span>₹{Math.floor(card?.card?.info?.defaultPrice / 100 / 60 || card?.card?.info?.price / 100 / 60)
+        }</span>
         </div>
         <div className="flex justify-between">
           <span>GST</span>
-          <span>₹50.03</span>
+          <span>₹{Math.floor(card?.card?.info?.defaultPrice / 100 / 7 || card?.card?.info?.price / 100 / 7)
+        }</span>
         </div>
         <div className="flex justify-between font-semibold">
           <span>TO PAY</span>

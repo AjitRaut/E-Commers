@@ -53,7 +53,8 @@ const NestedCartcard = ({nestedcards}) => {
             </div>
             <div className="flex justify-between">
               <span>GST</span>
-              <span>₹50.03</span>
+              <span>₹{Math.floor(defaultPrice / 100 / 7 || price / 100 / 7)
+            }</span>
             </div>
             <div className="flex justify-between font-semibold">
               <span>TO PAY</span>
