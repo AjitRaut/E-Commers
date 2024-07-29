@@ -8,14 +8,11 @@ const BestCousins = () => {
     const [showMore, setShowMore] = useState(false);
   
     if (!newdata || !newdata.cards) {
-      // Show a loading state while data is being fetched
       return <ShimmerUi />;
     }
   
     const brands = newdata.cards[7]?.card?.card?.brands;
-    console.log(brands);
   
-    // Check if brands is an array before rendering
     if (!Array.isArray(brands)) {
       return <ShimmerUi />;
     }
@@ -28,7 +25,7 @@ const BestCousins = () => {
         <h1 className='text-lg font-bold'>Best Cuisines Near Me</h1>
       <div className='my-2 grid grid-cols-4 gap-4'>
         {initialBrands.map((brand, index) => (
-          <button key={index} className=' p-2 border text-center border-gray-300 rounded-xl'>
+          <button key={index} className=' text-brand text-lg overflow-hidden font-gilroy font-normal p-2 border text-center border-gray-300 rounded-xl'>
             <div className='text-center'>
               {brand.text}
             </div>
@@ -36,14 +33,14 @@ const BestCousins = () => {
         ))}
         {!showMore && (
           <button 
-            className='p-2 border text-center border-gray-300 rounded-xl'
+            className='p-2 border text-center  text-brand text-lg overflow-hidden font-gilroy font-normal border-gray-300 rounded-xl'
             onClick={() => setShowMore(true)}
           >
             Show More
           </button>
         )}
         {showMore && remainingBrands.map((brand, index) => (
-          <button key={index + 11} className='m-2 p-2 border text-center border-gray-300 rounded-2xl'>
+          <button key={index + 11} className='m-2 p-2  text-brand font-gilroy text-lg overflow-hidden font-normal border text-center border-gray-300 rounded-2xl'>
             <div className='text-center'>
               {brand.text}
             </div>

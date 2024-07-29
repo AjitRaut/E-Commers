@@ -42,7 +42,7 @@ const ProductSlider = () => {
               <div className="w-[144px] h[192px]">
                 <img
                   style={{ transform: `translateX(-${Slideritem * 100}%)` }}
-                  className="w-[144px] h-46 cursor-pointer"
+                  className="w-[144px] h-46 cursor-pointer overflow-hidden"
                   key={index}
                   src={`${SliderIMG_URL}${datt.imageId}`}
                   alt="slider"

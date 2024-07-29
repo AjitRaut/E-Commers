@@ -88,7 +88,7 @@ const TopRestorant = () => {
                     </div>
                   </div>
                   <div className="">
-                    <div className="font-bold text-lg from-neutral-800">
+                    <div className="font-bold text-lg from-neutral-800 overflow-hidden">
                       {name}
                     </div>
                     <div className="flex gap-1 justify-start items-center">

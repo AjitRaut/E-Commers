@@ -6,6 +6,7 @@ import useProductMenu from "../Utils/useProductMenu";
 import "./card.css";
 import ProductCategories from "./ProductCategories";
 import Offers from "./Offers";
+import OfferFooter from "./OfferFooter";
 
 const ProductsMenu = () => {
   const { infoId } = useParams();
@@ -37,6 +38,8 @@ const ProductsMenu = () => {
         c.card?.card?.["@type"] ===
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
+    // const pmenuft = pmenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR;
+    // console.log(pmenuft)
 
   return (
     <>
@@ -92,8 +95,13 @@ const ProductsMenu = () => {
                   setshow={() => setshow(index === show ? null : index)}
                 />
               ))}
+              <div className="mt-7">
+             <OfferFooter />
+              </div>
             </div>
+           
           </div>
+         
         </div>
       )}
     </>
