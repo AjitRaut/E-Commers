@@ -14,10 +14,11 @@ const cartslice = createSlice({
       state.nested_items.push(action.payload);
     },
     removeitem: (state) => {
-      state.items.pop();
+      state.normal_item.pop();
     },
     cartclear: (state) => {
-      state.items.length = 0;
+      state.normal_item = [] ;
+      state.nested_items = [] ;
     },
   },
 });

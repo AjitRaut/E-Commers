@@ -3,7 +3,7 @@ import { Recomended_IMG_URL } from "../Utils/Url";
 
 const CartCard = ({ cards }) => {
   if (!cards || cards.length === 0) {
-    return <div>No items in cart</div>;
+    return <div className="flex justify-center place-items-center"> <h1>No items in cart</h1></div>;
   }
 
   // Helper function to calculate fees and total
