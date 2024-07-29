@@ -11,6 +11,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const Header = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
 
+  const totalItems = nested_items.length + normal_item.length;
+
   return (
     <>
       <header className="w-full bg-slate-50 h-20 fixed top-0 shadow-sm z-50">
@@ -87,9 +89,9 @@ const Header = () => {
                 <Link to="/Sign in">Sign In</Link>
               </li>
               <li className="flex gap-1 items-center relative hover:text-orange-500">
-                <span>
+                <span >
                   <svg
-                    className="fill-white stroke-slate-600 stroke-2"
+                    className="fill-green-600 stroke-slate-600 stroke-2"
                     viewBox="-1 0 37 32"
                     height="20"
                     width="24"
@@ -97,9 +99,9 @@ const Header = () => {
                   >
                     <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
                   </svg>
-                  {nested_items.length + normal_item.length > 0 && (
-                    <span className="absolute bg-green-600 text-white top-[2px] left-[6px] text-sm font-bold">
-                      {nested_items.length + normal_item.length}
+                  {totalItems > 0 && (
+                    <span className="absolute  text-white top-[2px] left-[6px] text-sm font-bold">
+                      {totalItems || 0}
                     </span>
                   )}
                 </span>
