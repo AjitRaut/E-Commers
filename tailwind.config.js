@@ -5,8 +5,10 @@ export default {
     extend: {
       fontFamily: {
         gilroy: "Gilroy",
+        headerFont: "ProximaNova, arial, Helvetica Neue, sans-serif",
       },
       colors: {
+        hfont:"#3d4152",
         offerftbg:"#f1f1f6",
         offerftbg2:"#a9abb2",
         customDark: "#02060C",
