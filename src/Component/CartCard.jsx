@@ -40,7 +40,8 @@ const CartCard = ({ cards }) => {
         </div>
         <div className="flex justify-between">
           <span>Delivery Fee</span>
-          <span>₹29</span>
+          <span>₹{card?.card?.info?.defaultPrice / 100 / 14 || card?.card?.info?.price / 100 / 14
+        }</span>
         </div>
         <div className="flex justify-between">
           <span>Platform Fee</span>
