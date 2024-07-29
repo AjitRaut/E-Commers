@@ -12,8 +12,8 @@ const Header = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
   return (
     <>
-      <header className=" w-full  bg-slate-50 h-20 fixed top-0">
-        <div className=" max-w-screen-xl m-auto h-full px-3 bg-slate-50 box shadow-sm flex justify-between font-serif">
+      <header className="w-full bg-slate-50 h-20 fixed top-0 shadow-sm z-50">
+        <div className="max-w-screen-xl m-auto h-full px-3 flex justify-between items-center">
           <div className="flex justify-center items-center">
             <Link to={"/"}>
               <SiSwiggy className="text-amber-600 w-9 h-12" />
