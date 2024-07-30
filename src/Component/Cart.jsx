@@ -32,7 +32,7 @@ const Cart = () => {
 
           {nested_items.length > 0
             ? nested_items.map((item, index) => (
-                <NestedCartcard key={index} nestedcards={item} />
+                <NestedCartcard key={index} index={index} nestedcards={item} />
               ))
             : null}
 

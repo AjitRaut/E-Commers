@@ -7,14 +7,11 @@ const BestPlaces = () => {
   const [showMore, setShowMore] = useState(false);
 
   if (!newdata || !newdata.cards) {
-    // Show a loading state while data is being fetched
     return <ShimmerUi />;
   }
 
   const brands = newdata.cards[6]?.card?.card?.brands;
-  console.log(brands);
 
-  // Check if brands is an array before rendering
   if (!Array.isArray(brands)) {
     return <ShimmerUi />;
   }

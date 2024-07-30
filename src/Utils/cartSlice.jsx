@@ -13,11 +13,12 @@ const cartslice = createSlice({
     nested_additem: (state, action) => {
       state.nested_items.push(action.payload);
     },
-    removenormal_item: (state) => {
-      state.normal_item.pop();
+    removenormal_item: (state , action) => {
+      state.normal_item = state.normal_item.filter((_, index) => index !== action.payload);
     },
-    removenested_items: (state) => {
-      state.nested_items.pop();
+    removenested_items: (state , action) => {
+      state.nested_items = state.nested_items.filter((_, index) => index !== action.payload);
+
     },
     
     cartclear: (state) => {

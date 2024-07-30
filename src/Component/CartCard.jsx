@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Recomended_IMG_URL } from "../Utils/Url";
+import { useDispatch } from "react-redux";
+import { removenormal_item } from "../Utils/cartSlice";
 
 const CartCard = ({ cards }) => {
+  const dispatch = useDispatch();
   if (!cards || cards.length === 0) {
     return <div className="flex justify-center place-items-center"> <h1>No items in cart</h1></div>;
   }
@@ -24,6 +27,10 @@ const CartCard = ({ cards }) => {
       totalToPay
     };
   };
+  const handleremove=(index)=>{
+    dispatch(removenormal_item(index))
+    console.log("deleted")
+  }
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
@@ -85,6 +92,9 @@ const CartCard = ({ cards }) => {
                 <span>TO PAY</span>
                 <span>₹{totalToPay}</span>
               </div>
+            </div>
+            <div>
+              <button onClick={()=>handleremove(index)}>remove</button>
             </div>
           </div>
         );
