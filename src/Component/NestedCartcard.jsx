@@ -9,7 +9,7 @@ const NestedCartcard = ({ nestedcards }) => {
   const itemTotal = initialPrice * quantity;
   const deliveryFee = Math.floor(itemTotal / 14);
   const platformFee = Math.floor(itemTotal / 60);
-  const gst = Math.floor(itemTotal / 7);
+  const gst = Math.floor(itemTotal * 0.007);
   const totalToPay = itemTotal + deliveryFee + platformFee + gst;
 
   const handleIncrease = () => setQuantity(quantity + 1);

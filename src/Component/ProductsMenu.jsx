@@ -87,7 +87,7 @@ const ProductsMenu = () => {
               <Offers />
               {/* Deals & Offers Section */}
 
-              {cat.map((c, index) => (
+              {cat?.map((c, index) => (
                 <ProductCategories
                   key={c.card.card.title}
                   categories={c.card.card}

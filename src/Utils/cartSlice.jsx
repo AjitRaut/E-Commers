@@ -13,9 +13,13 @@ const cartslice = createSlice({
     nested_additem: (state, action) => {
       state.nested_items.push(action.payload);
     },
-    removeitem: (state) => {
+    removenormal_item: (state) => {
       state.normal_item.pop();
     },
+    removenested_items: (state) => {
+      state.nested_items.pop();
+    },
+    
     cartclear: (state) => {
       state.normal_item = [] ;
       state.nested_items = [] ;
@@ -23,6 +27,6 @@ const cartslice = createSlice({
   },
 });
 
-export const { normal_Additem, nested_additem, removeitem, cartclear } =
+export const { normal_Additem, nested_additem,  removenormal_item, removenested_items, cartclear } =
   cartslice.actions;
 export default cartslice.reducer;

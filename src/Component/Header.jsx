@@ -11,7 +11,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const Header = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
 
-  const totalItems = nested_items.length + normal_item.length;
+  const totalItems = (normal_item?.length || 0) + (nested_items?.length || 0);
 
   return (
     <>
