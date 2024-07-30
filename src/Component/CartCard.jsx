@@ -13,7 +13,7 @@ const CartCard = ({ cards }) => {
     const itemTotal = Math.floor(price) * quantity;
     const deliveryFee = Math.floor(price / 14);
     const platformFee = Math.floor(price / 60);
-    const gst = Math.floor(price / 7);
+    const gst = Math.floor(itemTotal * 0.05);
     const totalToPay = itemTotal + deliveryFee + platformFee + gst;
 
     return {
