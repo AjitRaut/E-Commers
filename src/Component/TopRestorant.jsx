@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const TopRestorant = () => {
   const [Slideritem, SetSlideritem] = useState(0);
   const newdata = UseMain();
+ 
 
   if (
     !newdata ||
@@ -20,6 +21,7 @@ const TopRestorant = () => {
 
   const restaurantInfo =
     newdata.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+    console.log(restaurantInfo)
 
   if (!restaurantInfo || restaurantInfo.length === 0) {
     return <ShimmerUi />;
@@ -59,6 +61,7 @@ const TopRestorant = () => {
               name,
               avgRating,
               cuisines,
+              areaName ,
               sla,
             } = restaurant.info;
 
@@ -87,8 +90,8 @@ const TopRestorant = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="">
-                    <div className="font-bold text-lg from-neutral-800 overflow-hidden">
+              
+                    <div className="font-bold text-lg from-neutral-800 truncate w-[270px]">
                       {name}
                     </div>
                     <div className="flex gap-1 justify-start items-center">
@@ -98,11 +101,13 @@ const TopRestorant = () => {
                       <span className="font-bold">{avgRating}</span>
                       <span className="font-bold">{slaString}</span>
                     </div>
-                    <div className="w-full h-7 overflow-hidden font-light text-lg font-serif from-stone-400">
-                      <p>{cuisineList}</p>
+                    <div className="text-base">
+                      <p className="truncate w-[270px] text-brand font-semibold">{cuisineList}</p>
+                      <p className="truncate w-[270px] text-brand font-semibold">{areaName
+                      }</p>
                     </div>
                   </div>
-                </div>
+                
               </Link>
             );
           })}

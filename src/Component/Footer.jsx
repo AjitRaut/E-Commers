@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
     <div className="w-full bg-f1">
-    <div className="mt-40 max-w-6xl m-auto">
+    <div className="mt-32 max-w-6xl m-auto">
         <div className=" h-28 flex justify-evenly place-items-center">
           <div className="w-[400px]">
             <h1 className="text-2xl font-extrabold text-slate-700">

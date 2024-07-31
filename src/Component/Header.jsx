@@ -24,8 +24,8 @@ const Header = () => {
             <div className="ml-9 font-bold border-b-2 text-sm border-emerald-950 text-hfont">
               <h2>Other</h2>
             </div>
-            <div className="text-sm pt-[2px] overflow-hidden ml-3 w-60 h-6 font-medium text-hfont">
-              Nandbachi Dob, Ganjakhet Rd, near.. Chandekar Akhada, Nagpur, Maharashtra 440018, GHANJAKHET SQUARE, near Nandbachi Dob, Ganjakhet Rd, near Chandekar Akhada, Nagpur, Maharashtra 440018, Baba Farid Nagar, Sitabuldi, Nagpur, Maharashtra 440026, India
+            <div className="text-sm pt-[2px] truncate ml-3 w-44 h-6 font-medium text-hfont">
+            Nagpur, Maharashtra, India
             </div>
             <div>
               <MdKeyboardArrowDown className="text-orange-500 h-10 w-6" />
