@@ -16,7 +16,7 @@ const ExploreRestaaurant = () => {
       <div className="mt-5 max-w-6xl overflow-hidden m-auto">
         <h1 className="text-lg font-bold">Explore Every Restaurants Near Me</h1>
         <div className="my-2 grid grid-cols-2 gap-4">
-          {brands.map((brand, index) => (
+          {brands?.map((brand, index) => (
             <button
               key={index}
               className=" p-2 border text-[15px] text-brand font-medium border-gray-300 rounded-xl"

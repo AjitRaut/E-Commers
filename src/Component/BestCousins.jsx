@@ -33,15 +33,15 @@ const BestCousins = () => {
         ))}
         {!showMore && (
           <button 
-            className='p-2 border text-center text-brand text-lg font-semibold border-gray-300 rounded-xl'
+            className='p-2 border text-center text-brand text-[15px]  font-semibold border-gray-300 rounded-xl'
             onClick={() => setShowMore(true)}
           >
             Show More
           </button>
         )}
         {showMore && remainingBrands.map((brand, index) => (
-          <button key={index + 11} className='m-2 p-2  text-brand truncate text-lg overflow-hidden font-semibold border text-center border-gray-300 rounded-2xl'>
-            <div className='text-center'>
+          <button key={index + 11} className='m-2 p-2 text-brand truncate text-[15px]  font-semibold border text-center border-gray-300 rounded-2xl'>
+            <div className='text-center truncate w-[250px]'>
               {brand.text}
             </div>
           </button>

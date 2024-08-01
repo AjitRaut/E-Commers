@@ -22,7 +22,7 @@ const ProductNestedCategories = ({ nestedCategories }) => {
               className="cursor-pointer flex justify-between place-items-center"
               onClick={() => handleclick(index)}
             >
-              <div className="text-lg font-bold p-[10px]">
+              <div className="text-base font-semibold p-[10px]">
                 {category?.title}
                 {category.itemCards && ` (${category.itemCards.length})`}
               </div>

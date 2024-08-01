@@ -20,7 +20,7 @@ const FooterLinks = () => {
             <ul>
               <li className="font-bold text-lg">Company</li>
               <li className="my-3 text-footer">About</li>
-              <li className="my-3text-footer">Company</li>
+              <li className="my-3 text-footer">Company</li>
               <li className="my-3 text-footer">Careers</li>
               <li className="my-3 text-footer">Team</li>
               <li className="my-3 text-footer">Swiggy One</li>
