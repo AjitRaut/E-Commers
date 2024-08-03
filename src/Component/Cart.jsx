@@ -44,10 +44,9 @@ const Cart = () => {
               <div className="h-[276px] mt-24 w-[320px]">
                 <img src={Cart_Bg_Url} alt="" />
               </div>
-              <div className="text-center">
-              
+              <div className="text-center ">
                 <p className="font-medium text-xl text-gray-600"> Your cart is empty</p>
-                <p className="text-base font-medium text-gray-500"> You can go to home page to view more restaurants</p>
+                <p className="text-base font-normal my-1 text-gray-500"> You can go to home page to view more restaurants</p>
               </div>
               <Link to={"/"}>
                 <div className="mt-5 flex justify-center  text-white text-center">
