@@ -4,6 +4,7 @@ import CartCard from "./CartCard";
 import NestedCartcard from "./NestedCartcard";
 import { cartclear } from "../Utils/cartSlice";
 import { Link } from "react-router-dom";
+import { Cart_Bg_Url } from "../Utils/Url";
 
 const Cart = () => {
   const { normal_item, nested_items } = useSelector((store) => store.cart);
@@ -39,13 +40,20 @@ const Cart = () => {
           {normal_item.length > 0 ? <CartCard cards={normal_item} /> : null}
 
           {!hasItems && (
-            <div>
-              <h2 className="mt-24 text-center text-xl font-bold">
-                Cart Is Empty
-              </h2>
+            <div className="flex flex-col place-items-center">
+              <div className="h-[276px] mt-12 w-[320px]">
+                <img src={Cart_Bg_Url} alt="" />
+              </div>
+              <div className="text-center">
+              
+                <p> Your cart is empty</p>
+                <p> You can go to home page to view more restaurants</p>
+              </div>
               <Link to={"/"}>
-                <div className="mt-56 flex justify-center  text-white text-center">
-                  <button className="bg-orange-500 text-xl font-bold p-3">Go To Shop</button>
+                <div className="mt-5 flex justify-center  text-white text-center">
+                  <button className="bg-orange-500 text-lg font-bold p-2">
+                    SEE RESTAURANTS NEAR YOU
+                  </button>
                 </div>
               </Link>
             </div>

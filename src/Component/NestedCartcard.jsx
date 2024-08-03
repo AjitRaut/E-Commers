@@ -19,7 +19,7 @@ const NestedCartcard = ({ nestedcards, index }) => {
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
-  const handleremove = (index) => {
+  const handleRemove = (index) => {
     dispatch(removenested_items(index));
   };
 
@@ -87,9 +87,23 @@ const NestedCartcard = ({ nestedcards, index }) => {
               <span>₹{totalToPay.toFixed(2)}</span>
             </div>
           </div>
-          <div>
-            <button onClick={() => handleremove(index)}>Remove</button>
-          </div>
+          <div className="flex justify-end gap-3">
+              <div className="flex justify-end">
+                <button
+                  onClick={() => handleRemove(index)}
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Remove
+                </button>
+              </div>
+              <div className="flex justify-end">
+                <button
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
         </div>
       </div>
     </div>

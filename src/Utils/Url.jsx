@@ -1,7 +1,7 @@
 export const IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-export const LOGO = "../assets/logo.svg"; // Adjust the path if necessary
+export const LOGO = "../assets/logo.svg";
 
 export const SliderIMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
@@ -17,3 +17,5 @@ export const ProductsMenu_URL =
 
 export const ProductSliderMenu_url =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+
+  export const Cart_Bg_Url = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
