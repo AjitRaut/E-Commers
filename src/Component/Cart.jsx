@@ -41,13 +41,13 @@ const Cart = () => {
 
           {!hasItems && (
             <div className="flex flex-col place-items-center">
-              <div className="h-[276px] mt-12 w-[320px]">
+              <div className="h-[276px] mt-24 w-[320px]">
                 <img src={Cart_Bg_Url} alt="" />
               </div>
               <div className="text-center">
               
-                <p> Your cart is empty</p>
-                <p> You can go to home page to view more restaurants</p>
+                <p className="font-medium text-xl text-gray-600"> Your cart is empty</p>
+                <p className="text-base font-medium text-gray-500"> You can go to home page to view more restaurants</p>
               </div>
               <Link to={"/"}>
                 <div className="mt-5 flex justify-center  text-white text-center">
